@@ -1,0 +1,45 @@
+syntax = "proto3";
+option java_outer_classname = "ChatMessage";
+//protobuf 使用message管理数据
+//会在StudentPOJO外部类生成一个内部类Student
+
+message Message {
+  enum DataType {
+    ChatMsgType = 0;
+    RouteMsgType = 1;
+  }
+
+  DataType dataType = 1;
+  oneof dataBody{
+    ChatMsg chatMsg= 2;
+    RouteMsg RouteMsg= 3;
+  }
+
+}
+
+message ChatMsg {
+  MsgActionEnum msgAction = 1;
+  string userId = 2;
+  string toUserId = 3;
+  string data = 4;
+}
+
+message RouteMsg {
+  RouteMsgActionEnum msgAction= 1;
+  string data = 2;
+}
+
+enum MsgActionEnum {
+  CONNECT = 0; //(1, "第一次(或重连)初始化连接"),
+  CHAT = 1; //(2, "聊天消息"),
+  SIGNED = 2; //(3, "消息签收"),
+  //KEEPALIVE(4, "客户端保持心跳"),
+  PULL_FRIEND = 3; //(5, "拉取好友");
+}
+
+enum RouteMsgActionEnum {
+  SHUTDOWN_USER = 0;
+  REGISTER = 1;
+  PUSH_ALL_USER_MESSAGE = 2;
+  ALL_USER = 3;
+}

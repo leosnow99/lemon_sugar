@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="sugar_service_chat_api" />
         <module name="sugar_service_route_api" />
         <module name="sugar_service_chat" />
         <module name="sugar_service_route" />
@@ -28,6 +29,7 @@
       <module name="sugar_service" options="-parameters" />
       <module name="sugar_service_api" options="-parameters" />
       <module name="sugar_service_chat" options="-parameters" />
+      <module name="sugar_service_chat_api" options="-parameters" />
       <module name="sugar_service_route" options="-parameters" />
       <module name="sugar_service_route_api" options="-parameters" />
     </option>

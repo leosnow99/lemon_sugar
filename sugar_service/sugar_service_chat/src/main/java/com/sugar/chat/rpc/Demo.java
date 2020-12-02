@@ -21,7 +21,8 @@ import java.util.Map;
 
 /**
  * @author LEOSNOW
- */ //@Component
+ */
+//@Component
 @Slf4j
 public class Demo {
 	private final NioEventLoopGroup loopGroup = new NioEventLoopGroup(1);

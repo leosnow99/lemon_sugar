@@ -11,6 +11,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>sugar_service_route_api</module>
+        <module>sugar_service_chat_api</module>
     </modules>
 
     <properties>
