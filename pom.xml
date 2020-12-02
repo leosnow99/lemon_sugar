@@ -10,11 +10,13 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>sugar_common</module>
-        <module>sugar_chat_service</module>
+        <module>sugar_service_api</module>
+        <module>sugar_service</module>
+        <module>sugar_gateway</module>
     </modules>
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
     <parent>
@@ -30,4 +32,15 @@
         </dependency>
     </dependencies>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Hoxton.SR6</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

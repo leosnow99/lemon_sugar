@@ -1,4 +1,4 @@
-package com.sugar.netty;
+package com.sugar.chat.netty;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
@@ -9,9 +9,12 @@ import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
 import io.netty.handler.timeout.IdleStateHandler;
 
+/**
+ * @author LEOSNOW
+ */
 public class ServerInitializer extends ChannelInitializer<SocketChannel> {
 	@Override
-	protected void initChannel(SocketChannel ch) throws Exception {
+	protected void initChannel(SocketChannel ch) {
 		final ChannelPipeline pipeline = ch.pipeline();
 		//websocket 基于http协议, 需要有http编解码器;
 		pipeline.addLast(new HttpServerCodec());

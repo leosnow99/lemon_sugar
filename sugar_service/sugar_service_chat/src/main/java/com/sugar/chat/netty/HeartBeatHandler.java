@@ -1,14 +1,16 @@
-package com.sugar.netty;
+package com.sugar.chat.netty;
 
-import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
 
+/**
+ * @author LEOSNOW
+ */
 public class HeartBeatHandler extends ChannelInboundHandlerAdapter {
 	@Override
-	public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+	public void userEventTriggered(ChannelHandlerContext ctx, Object evt) {
 		//判断evt是否是IdleStateEvent(用于触发用户时间, 包换读空闲/写空闲/读写空闲)
 		if (evt instanceof IdleStateEvent) {
 			final IdleStateEvent event = (IdleStateEvent) evt;

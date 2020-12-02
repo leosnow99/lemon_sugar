@@ -1,0 +1,27 @@
+nettyService:
+  port: 7000
+#  server.port=8889
+#  spring.application.name=consulclient8889
+#  spring.cloud.consul.host=localhost														#注册consul服务的主机
+#  spring.cloud.consul.port=8500																	#注册consul服务的端口号
+#  spring.cloud.consul.discovery.register-health-check=false	    #关闭consu了服务的健康检查[不推荐]
+#  spring.cloud.consul.discovery.service-name=${spring.application.name} #指定注册的服务名称 默认就是应用名
+server:
+  port: 6100
+spring:
+  application:
+    name: IMSERVER
+  cloud:
+    consul:
+      host: 218.198.180.38
+      port: 8500
+      discovery:
+        register-health-check: true
+        prefer-ip-address: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://218.198.180.38:3306/sugar_chat?serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  redis:
+    host: 218.198.180.38
