@@ -13,6 +13,8 @@ public class ClientInitializer extends ChannelInitializer<SocketChannel> {
 	protected void initChannel(SocketChannel ch) {
 		final ChannelPipeline pipeline = ch.pipeline();
 		
+		pipeline.addLast(new CommonDecoder());
+		pipeline.addLast(new CommonEncoder());
 		pipeline.addLast(new ClientHandler());
 	}
 }

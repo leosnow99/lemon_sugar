@@ -1,5 +1,8 @@
 package com.surgar.entity;
 
+/**
+ * @author LEOSNOW
+ */
 public interface ResultCode {
     //操作是否成功,true为成功，false操作失败
     boolean success();

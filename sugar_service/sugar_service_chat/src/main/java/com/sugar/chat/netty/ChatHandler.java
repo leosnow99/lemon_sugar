@@ -1,21 +1,89 @@
 package com.sugar.chat.netty;
 
+import com.sugar.chat.pojo.ChatMessage;
+import com.sugar.chat.pojo.TransferMessage;
+import com.sugar.chat.service.ChatService;
+import com.sugar.chat.util.ChannelSocketHolder;
+import com.sugar.chat.util.SpringUtil;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
+import io.netty.channel.socket.nio.NioSocketChannel;
+import lombok.extern.slf4j.Slf4j;
 
-//TextWebSocketFrame: 在netty中, 是用于为websocket 专门处理文本的对象, frame是消息到载体
-public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
-	
+
+/**
+ * @author LEOSNOW
+ * @TextWebSocketFrame: 在netty中, 是用于为websocket 专门处理文本的对象, frame是消息到载体
+ * @see io.netty.channel.SimpleChannelInboundHandler  消息处理器
+ */
+@Slf4j
+public class ChatHandler extends SimpleChannelInboundHandler<TransferMessage> {
+	private final ChatService chatService = (ChatService) SpringUtil.getBean(ChatServer.class);
 	
 	@Override
-	protected void channelRead0(ChannelHandlerContext ctx, TextWebSocketFrame msg) {
+	protected void channelRead0(ChannelHandlerContext ctx, TransferMessage msg) {
+		if (msg == null) {
+			return;
+		}
+		final ChatMessage.Message message = msg.getMessage();
+		if (message.getDataType() == ChatMessage.Message.DataType.ChatMsgType) {
+			handleChatMessage(message.getChatMsg());
+		} else if (message.getDataType() == ChatMessage.Message.DataType.RouteMsgType) {
+			handleRoutMessage(message.getRouteMsg(), (NioSocketChannel) ctx.channel());
+		}
+		
+	}
 	
+	private void handleChatMessage(ChatMessage.ChatMsg chatMsg) {
+		log.info("receive user message!");
+	}
+	
+	private void handleRoutMessage(ChatMessage.RouteMsg routeMsg, NioSocketChannel channel) {
+		log.info("receive route message!");
+		if (routeMsg == null) {
+			return;
+		}
+		switch (routeMsg.getMsgAction()) {
+			case ALL_USER:
+				final int count = chatService.getAllUser();
+				final ChatMessage.Message message = new ChatMessage.Message.Builder().setDataType(ChatMessage.Message.DataType.RouteMsgType).setRouteMsg(
+						new ChatMessage.RouteMsg.Builder().setMsgAction(ChatMessage.RouteMsgActionEnum.ALL_USER).setData(String.valueOf(count)).build()
+				).build();
+				channel.writeAndFlush(TransferMessage.of(message));
+				break;
+			case REGISTER:
+				chatService.registerRoute(routeMsg.getData(), channel);
+				break;
+			case SHUTDOWN_USER:
+				chatService.shutdownUser(routeMsg.getData());
+				break;
+			case PUSH_ALL_USER_MESSAGE:
+				chatService.pushAllUserMessage(routeMsg.getData());
+				break;
+			default:
+				log.warn("error type!");
+		}
+	}
+	
+	/**
+	 * 下线用户
+	 *
+	 * @param ctx 控制器
+	 */
+	@Override
+	public void channelInactive(ChannelHandlerContext ctx) {
+		final String userId = ChannelSocketHolder.getUserId(((NioSocketChannel) ctx.channel()));
+		if (userId != null) {
+			log.warn("[{}] is offline! ", userId);
+			ChannelSocketHolder.remove(((NioSocketChannel) ctx.channel()));
+		}
+		ctx.channel().close();
 	}
 	
 	@Override
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-		//TODO hash表移除channel
+		ChannelSocketHolder.remove((NioSocketChannel) ctx.channel());
 		ctx.close();
+		log.error("exceptionCaught: ", cause);
 	}
 }

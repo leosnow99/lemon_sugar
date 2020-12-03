@@ -927,7 +927,7 @@ public final class ChatMessage {
       }
 
       // Construct using ChatMessage.Message.newBuilder()
-      private Builder() {
+      public Builder() {
         maybeForceBuilderInitialization();
       }
 
@@ -2860,7 +2860,7 @@ public final class ChatMessage {
       }
 
       // Construct using ChatMessage.RouteMsg.newBuilder()
-      private Builder() {
+      public Builder() {
         maybeForceBuilderInitialization();
       }
 
