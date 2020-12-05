@@ -1,4 +1,6 @@
-nettyService:
+netty-service:
+  id: 001
+  ip: 218.198.180.33
   port: 7000
 #  server.port=8889
 #  spring.application.name=consulclient8889

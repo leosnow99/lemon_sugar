@@ -1,3 +1,26 @@
-route:
-  port: 11001
-  address: 127.0.0.1
+#route:
+#  port: 11001
+#  address: 127.0.0.1
+#  server.port=8889
+#  spring.application.name=consulclient8889
+#  spring.cloud.consul.host=localhost														#注册consul服务的主机
+#  spring.cloud.consul.port=8500																	#注册consul服务的端口号
+#  spring.cloud.consul.discovery.register-health-check=false	    #关闭consu了服务的健康检查[不推荐]
+#  spring.cloud.consul.discovery.service-name=${spring.application.name} #指定注册的服务名称 默认就是应用名
+server:
+  port: 6200
+spring:
+  application:
+    name: IM-ROUTE
+  cloud:
+    consul:
+      host: 218.198.180.38
+      port: 8500
+      discovery:
+        register-health-check: true
+        prefer-ip-address: true
+        metadata:
+          rote-port: 7100
+
+  redis:
+    host: 218.198.180.38

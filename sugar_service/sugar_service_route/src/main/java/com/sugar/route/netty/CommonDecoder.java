@@ -28,9 +28,10 @@ public class CommonDecoder extends ByteToMessageDecoder {
 			msg.resetReaderIndex();
 			return;
 		}
+		final byte[] bytes = new byte[length];
+		msg.readBytes(bytes);
 		
-		final ByteBuf byteBuf = msg.readBytes(length);
-		final ChatMessage.Message message = ChatMessage.Message.parseFrom(byteBuf.array());
+		final ChatMessage.Message message = ChatMessage.Message.parseFrom(bytes);
 		final TransferMessage transferMessage = new TransferMessage();
 		transferMessage.setLength(length);
 		transferMessage.setMessage(message);

@@ -1,49 +1,62 @@
 package com.sugar.route.netty;
 
+import com.sugar.route.pojo.ChatServerInfo;
 import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.http.impl.bootstrap.ServerBootstrap;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
-import javax.annotation.PostConstruct;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author LEOSNOW
  */
-@Component
 @Slf4j
 public class Client {
 	
-	private final EventLoopGroup workGroup = new NioEventLoopGroup();
+	private static final Map<String, EventLoopGroup> GROUPS = new HashMap<>();
 	
+	private static final Map<String, NioSocketChannel> CLIENTS = new HashMap<>();
+	private static final Map<NioSocketChannel, String> SESSION_CLIENTS = new HashMap<>();
 	
-	@Value("${route.address}")
-	private String address;
-	
-	@Value("${route.port}")
-	private Integer port;
-	
-	@PostConstruct
-	public void start() {
-		try{
+	public static void connectChatServer( ChatServerInfo chatServerInfo) {
+		try {
+			final NioEventLoopGroup workGroup = new NioEventLoopGroup();
 			final Bootstrap bootstrap = new Bootstrap();
+			bootstrap.group(workGroup).channel(NioSocketChannel.class).handler(new ClientInitializer());
 			
-			bootstrap.group(workGroup)
-					.channel(NioSocketChannel.class)
-					.handler(null);
-			log.info("Router Server 启动成功!");
+			if (chatServerInfo == null || StringUtils.isEmpty(chatServerInfo.getAddress()) || chatServerInfo.getPort() == null) {
+				return;
+			}
 			
-			//启动客户端连接服务器端
-			bootstrap.connect(address, port).sync();
-			
+			final ChannelFuture future = bootstrap.connect(chatServerInfo.getAddress(), chatServerInfo.getPort()).sync();
+			if (future.isSuccess()) {
+				String clientId = chatServerInfo.getId();
+				GROUPS.put(clientId, workGroup);
+				CLIENTS.put(clientId, ((NioSocketChannel) future.channel()));
+				SESSION_CLIENTS.put(((NioSocketChannel) future.channel()), clientId);
+			}
 		} catch (InterruptedException e) {
 			log.error("异常: ", e);
 			e.printStackTrace();
 		}
 	}
 	
+	public static void destroy() {
+		for (NioSocketChannel channel : CLIENTS.values()) {
+			channel.close();
+		}
+		
+		for (EventLoopGroup loopGroup : GROUPS.values()) {
+			loopGroup.shutdownGracefully();
+		}
+	}
+	
+	public static Map<NioSocketChannel, String> getClients() {
+		return SESSION_CLIENTS;
+	}
 }

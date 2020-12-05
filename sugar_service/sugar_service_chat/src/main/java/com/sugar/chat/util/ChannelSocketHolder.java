@@ -16,6 +16,10 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ChannelSocketHolder {
 	private static final Map<String, NioSocketChannel> CHANNEL_MAP = new ConcurrentHashMap<>(16);
 	
+	private static NioSocketChannel ROUTE_CHANNEL;
+	
+	private static String ROUTE_ID;
+	
 	public static void put(String userId, NioSocketChannel socketChannel) {
 		CHANNEL_MAP.put(userId, socketChannel);
 	}
@@ -64,14 +68,29 @@ public class ChannelSocketHolder {
 	}
 	
 	public static void closeAllUser() {
-		CHANNEL_MAP.entrySet().stream().filter(entry -> !entry.getKey().startsWith("route")).forEach(entry -> {
-			entry.getValue().close();
-			remove(entry.getValue());
+		CHANNEL_MAP.forEach((key, value) -> {
+			value.close();
+			remove(value);
 		});
 	}
 	
 	public static int getUserCount() {
 //		return CHANNEL_MAP.entrySet().stream().filter(entry -> !entry.getKey().startsWith("route_")).toArray().length;
 		return CHANNEL_MAP.size();
+	}
+	
+	public static void setRoute(NioSocketChannel channel, String routeId) {
+		if (channel != null) {
+			ROUTE_CHANNEL = channel;
+			ROUTE_ID = routeId;
+		}
+	}
+	
+	public static NioSocketChannel getRoute() {
+		return ROUTE_CHANNEL;
+	}
+	
+	public static String getRouteId() {
+		return ROUTE_ID;
 	}
 }

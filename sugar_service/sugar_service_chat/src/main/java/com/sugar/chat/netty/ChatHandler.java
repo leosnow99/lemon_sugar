@@ -1,6 +1,7 @@
 package com.sugar.chat.netty;
 
 import com.sugar.chat.pojo.ChatMessage;
+import com.sugar.chat.pojo.ChatMessageFactory;
 import com.sugar.chat.pojo.TransferMessage;
 import com.sugar.chat.service.ChatService;
 import com.sugar.chat.util.ChannelSocketHolder;
@@ -18,11 +19,12 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class ChatHandler extends SimpleChannelInboundHandler<TransferMessage> {
-	private final ChatService chatService = (ChatService) SpringUtil.getBean(ChatServer.class);
+	private final ChatService chatService = (ChatService) SpringUtil.getBean("chatServiceImpl");
 	
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, TransferMessage msg) {
 		if (msg == null) {
+			log.warn("channelRead0: msg is null");
 			return;
 		}
 		final ChatMessage.Message message = msg.getMessage();
@@ -45,13 +47,15 @@ public class ChatHandler extends SimpleChannelInboundHandler<TransferMessage> {
 		}
 		switch (routeMsg.getMsgAction()) {
 			case ALL_USER:
+				log.info("收到: ALL_USER");
 				final int count = chatService.getAllUser();
-				final ChatMessage.Message message = new ChatMessage.Message.Builder().setDataType(ChatMessage.Message.DataType.RouteMsgType).setRouteMsg(
-						new ChatMessage.RouteMsg.Builder().setMsgAction(ChatMessage.RouteMsgActionEnum.ALL_USER).setData(String.valueOf(count)).build()
-				).build();
+				log.info("count: [{}]", count);
+				final ChatMessage.Message message = ChatMessageFactory.ofRouteMessage(ChatMessage.RouteMsgActionEnum.ALL_USER,
+								String.valueOf(count));
 				channel.writeAndFlush(TransferMessage.of(message));
 				break;
 			case REGISTER:
+				System.out.println("register-----");
 				chatService.registerRoute(routeMsg.getData(), channel);
 				break;
 			case SHUTDOWN_USER:

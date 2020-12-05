@@ -21,8 +21,8 @@ public class HeartBeatHandler extends ChannelInboundHandlerAdapter {
 				System.out.println("进入写空闲");
 			} else if (event.state() == IdleState.ALL_IDLE) {
 				System.out.println("进入读写空闲");
-//				final Channel channel = ctx.channel();
-//				//关闭无用channel,防止资源浪费
+				ctx.channel().close();
+				//关闭无用channel,防止资源浪费
 //				System.out.println("channel关闭前, users的数量为: " + ChatHandler.users.size());
 //				channel.close();
 //				System.out.println("channel关闭后, users的数量为: " + ChatHandler.users.size());

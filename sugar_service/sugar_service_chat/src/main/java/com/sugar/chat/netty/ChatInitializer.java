@@ -18,7 +18,7 @@ public class ChatInitializer extends ChannelInitializer<SocketChannel> {
 		
 		//针对客户端, 如果在一分钟没有向服务器端发送读写心跳,则主动断开
 		//如果是读空闲或者写空闲, 不处理
-		pipeline.addLast(new IdleStateHandler(10, 10, 30));
+		pipeline.addLast(new IdleStateHandler(10, 10, 80));
 		//自定义的空闲状态检测
 		pipeline.addLast(new HeartBeatHandler());
 		
