@@ -3,6 +3,7 @@ package com.sugar.route.schedule;
 import com.sugar.chat.pojo.ChatMessage;
 import com.sugar.chat.pojo.ChatMessageFactory;
 import com.sugar.chat.pojo.TransferMessage;
+import com.sugar.route.netty.ChatServerHolder;
 import com.sugar.route.netty.Client;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +23,7 @@ public class RouteSchedule {
 	@Scheduled(cron = "0/30 * * * * *")
 	public void checkChatService() {
 		log.info("checkChatService");
-		final Map<NioSocketChannel, String> clients = Client.getClients();
+		final Map<NioSocketChannel, String> clients = ChatServerHolder.getClients();
 		for (NioSocketChannel channel : clients.keySet()) {
 			if (channel.isActive()) {
 				log.info("active...");

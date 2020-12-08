@@ -9,21 +9,12 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * @author LEOSNOW
  */
 @Slf4j
 public class Client {
-	
-	private static final Map<String, EventLoopGroup> GROUPS = new HashMap<>();
-	
-	private static final Map<String, NioSocketChannel> CLIENTS = new HashMap<>();
-	private static final Map<NioSocketChannel, String> SESSION_CLIENTS = new HashMap<>();
-	
-	public static void connectChatServer( ChatServerInfo chatServerInfo) {
+	public static void connectChatServer(ChatServerInfo chatServerInfo) {
 		try {
 			final NioEventLoopGroup workGroup = new NioEventLoopGroup();
 			final Bootstrap bootstrap = new Bootstrap();
@@ -36,27 +27,15 @@ public class Client {
 			final ChannelFuture future = bootstrap.connect(chatServerInfo.getAddress(), chatServerInfo.getPort()).sync();
 			if (future.isSuccess()) {
 				String clientId = chatServerInfo.getId();
-				GROUPS.put(clientId, workGroup);
-				CLIENTS.put(clientId, ((NioSocketChannel) future.channel()));
-				SESSION_CLIENTS.put(((NioSocketChannel) future.channel()), clientId);
+				ChatServerHolder.CHAT_SERVER_INFO.put(clientId, chatServerInfo);
+				ChatServerHolder.GROUPS.put(clientId, workGroup);
+				ChatServerHolder.CLIENTS.put(clientId, ((NioSocketChannel) future.channel()));
+				ChatServerHolder.SESSION_CLIENTS.put(((NioSocketChannel) future.channel()), clientId);
 			}
 		} catch (InterruptedException e) {
 			log.error("异常: ", e);
-			e.printStackTrace();
 		}
 	}
 	
-	public static void destroy() {
-		for (NioSocketChannel channel : CLIENTS.values()) {
-			channel.close();
-		}
-		
-		for (EventLoopGroup loopGroup : GROUPS.values()) {
-			loopGroup.shutdownGracefully();
-		}
-	}
 	
-	public static Map<NioSocketChannel, String> getClients() {
-		return SESSION_CLIENTS;
-	}
 }
