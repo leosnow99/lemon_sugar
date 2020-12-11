@@ -4,10 +4,7 @@ import com.sugar.route.netty.ChatServerHandler;
 import com.sugar.route.pojo.ChatServerInfo;
 import com.sugar.route.service.RouteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author LEOSNOW
@@ -28,5 +25,10 @@ public class RouteController {
 		ChatServerHandler.chatServerRegister(chatServerInfo);
 		System.out.println("收到消息: " + chatServerInfo.getAddress() + ":" + chatServerInfo.getPort());
 		routeService.register(chatServerInfo);
+	}
+	
+	@GetMapping("/chatService")
+	public ChatServerInfo getChatService() {
+		return routeService.getChatServer();
 	}
 }

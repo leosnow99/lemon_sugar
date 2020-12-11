@@ -26,6 +26,12 @@ public interface RouteService {
 	
 	
 	/**
+	 * 请求一个服务器实例 默认实现
+	 * @return 服务器实例信息
+	 */
+	ChatServerInfo getChatServer();
+	
+	/**
 	 * 下线一个服务器
 	 *
 	 * @param chatServerInfo 服务器信息

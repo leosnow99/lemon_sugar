@@ -32,6 +32,12 @@ public class RouteServiceImpl implements RouteService {
 	
 	@Override
 	public ChatServerInfo getChatServer(UserChatInfo userChatInfo) {
+		log.info(userChatInfo.getIp() + " 获取ip地址!");
+		return allocationAlgorithm.getServer();
+	}
+	
+	@Override
+	public ChatServerInfo getChatServer() {
 		return allocationAlgorithm.getServer();
 	}
 	

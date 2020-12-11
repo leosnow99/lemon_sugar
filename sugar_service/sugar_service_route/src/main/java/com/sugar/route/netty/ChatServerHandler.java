@@ -24,19 +24,24 @@ import java.util.Set;
 @Component
 public class ChatServerHandler {
 	@Autowired
-	static StringRedisTemplate redisTemplate;
+	private StringRedisTemplate redisTemplate;
 	
-	@Value("${chatServer.redis.groupName}")
-	private static String chatServerGroupName;
+	@Value("${chat-server.redis.group-name}")
+	private String chatServerGroupName;
+	
 	
 	private static BoundZSetOperations<String, String> chatServerTemplate;
+
+//	private static ChatServerHandler chatServerHandlerUtils;
+	
 	
 	@PostConstruct
-	private static void init() {
-		if (StringUtils.isEmpty(chatServerGroupName)) {
+	private void init() {
+//		chatServerHandlerUtils = this;
+		if (StringUtils.isEmpty(this.chatServerGroupName)) {
 			throw new RuntimeException("参数错误");
 		}
-		chatServerTemplate = redisTemplate.boundZSetOps(chatServerGroupName);
+		chatServerTemplate = this.redisTemplate.boundZSetOps(chatServerGroupName);
 	}
 	
 	
