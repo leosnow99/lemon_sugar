@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 /**
  * @author LEOSNOW
  */
-@FeignClient(name = "IM-ROUTE")
+@FeignClient(value = "IM-ROUTE")
 public interface RouteFeign {
 	
 	/**

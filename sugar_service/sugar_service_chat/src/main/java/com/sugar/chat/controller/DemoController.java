@@ -1,5 +1,6 @@
 package com.sugar.chat.controller;
 
+import com.sugar.chat.util.ChannelSocketHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -9,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * @author bytedance
+ */
 @RestController
 @RequestMapping("/")
 public class DemoController {
@@ -28,5 +32,14 @@ public class DemoController {
 //		HealthServicesRequest.newBuilder()
 //				.set
 //		consulClient.getHealthServices("IMSENTINEL", );
+	}
+
+	/**
+	 * 路由健康检查
+	 * @return 回复目前服务器注册的服务数量
+	 */
+	@GetMapping("/route/health")
+	public Integer checkHealth() {
+		return ChannelSocketHolder.getUserCount();
 	}
 }

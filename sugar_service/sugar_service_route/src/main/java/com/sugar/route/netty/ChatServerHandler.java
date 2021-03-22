@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.BoundZSetOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.PostConstruct;
@@ -21,7 +20,7 @@ import java.util.Set;
  *
  * @author LEOSNOW
  */
-@Component
+//@Component
 public class ChatServerHandler {
 	@Autowired
 	private StringRedisTemplate redisTemplate;

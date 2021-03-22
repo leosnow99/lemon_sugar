@@ -1,6 +1,7 @@
 package com.sugar.route.service;
 
 import com.sugar.route.pojo.ChatServerInfo;
+import com.sugar.route.pojo.ForwardMessage;
 import com.sugar.route.pojo.UserChatInfo;
 
 /**
@@ -23,7 +24,13 @@ public interface RouteService {
 	 * @return 返回一个服务器实例
 	 */
 	ChatServerInfo getChatServer(UserChatInfo userChatInfo);
-	
+
+
+	/**
+	 * 夸服务实例转发消息
+	 * @param message 需要转发的消息
+	 */
+	void forwardMessage(ForwardMessage message);
 	
 	/**
 	 * 请求一个服务器实例 默认实现
