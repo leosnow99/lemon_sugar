@@ -42,6 +42,7 @@ public class ChatServerDao {
     }
 
     public void deleteChatServer(String chatServerId) {
+        log.info("delete chatServer id: " + chatServerId);
         redisTemplate.delete(getKey(chatServerId));
     }
 }

@@ -1,6 +1,7 @@
 netty-service:
-  id: 001
+  id: 1001
   ip: 127.0.0.1
+  http—port: 6100
   port: 7000
 #  server.port=8889
 #  spring.application.name=consulclient8889

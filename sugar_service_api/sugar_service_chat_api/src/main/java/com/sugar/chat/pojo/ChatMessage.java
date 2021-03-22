@@ -87,10 +87,9 @@ public final class ChatMessage {
     public static final int PULL_FRIEND_VALUE = 3;
 
 
-    @Override
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new IllegalArgumentException(
+        throw new java.lang.IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -101,7 +100,7 @@ public final class ChatMessage {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @Deprecated
+    @java.lang.Deprecated
     public static MsgActionEnum valueOf(int value) {
       return forNumber(value);
     }
@@ -127,22 +126,19 @@ public final class ChatMessage {
     private static final com.google.protobuf.Internal.EnumLiteMap<
         MsgActionEnum> internalValueMap =
           new com.google.protobuf.Internal.EnumLiteMap<MsgActionEnum>() {
-            @Override
             public MsgActionEnum findValueByNumber(int number) {
               return MsgActionEnum.forNumber(number);
             }
           };
 
-    @Override
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new IllegalStateException(
+        throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
     }
-    @Override
     public final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptorForType() {
       return getDescriptor();
@@ -157,7 +153,7 @@ public final class ChatMessage {
     public static MsgActionEnum valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new IllegalArgumentException(
+        throw new java.lang.IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -217,10 +213,9 @@ public final class ChatMessage {
     public static final int ALL_USER_VALUE = 3;
 
 
-    @Override
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new IllegalArgumentException(
+        throw new java.lang.IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -231,7 +226,7 @@ public final class ChatMessage {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @Deprecated
+    @java.lang.Deprecated
     public static RouteMsgActionEnum valueOf(int value) {
       return forNumber(value);
     }
@@ -257,22 +252,19 @@ public final class ChatMessage {
     private static final com.google.protobuf.Internal.EnumLiteMap<
         RouteMsgActionEnum> internalValueMap =
           new com.google.protobuf.Internal.EnumLiteMap<RouteMsgActionEnum>() {
-            @Override
             public RouteMsgActionEnum findValueByNumber(int number) {
               return RouteMsgActionEnum.forNumber(number);
             }
           };
 
-    @Override
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new IllegalStateException(
+        throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
     }
-    @Override
     public final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptorForType() {
       return getDescriptor();
@@ -287,7 +279,7 @@ public final class ChatMessage {
     public static RouteMsgActionEnum valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new IllegalArgumentException(
+        throw new java.lang.IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -318,7 +310,7 @@ public final class ChatMessage {
      * <code>.Message.DataType dataType = 1;</code>
      * @return The dataType.
      */
-    Message.DataType getDataType();
+    ChatMessage.Message.DataType getDataType();
 
     /**
      * <code>.ChatMsg chatMsg = 2;</code>
@@ -329,11 +321,11 @@ public final class ChatMessage {
      * <code>.ChatMsg chatMsg = 2;</code>
      * @return The chatMsg.
      */
-    ChatMsg getChatMsg();
+    ChatMessage.ChatMsg getChatMsg();
     /**
      * <code>.ChatMsg chatMsg = 2;</code>
      */
-    ChatMsgOrBuilder getChatMsgOrBuilder();
+    ChatMessage.ChatMsgOrBuilder getChatMsgOrBuilder();
 
     /**
      * <code>.RouteMsg RouteMsg = 3;</code>
@@ -344,13 +336,13 @@ public final class ChatMessage {
      * <code>.RouteMsg RouteMsg = 3;</code>
      * @return The routeMsg.
      */
-    RouteMsg getRouteMsg();
+    ChatMessage.RouteMsg getRouteMsg();
     /**
      * <code>.RouteMsg RouteMsg = 3;</code>
      */
-    RouteMsgOrBuilder getRouteMsgOrBuilder();
+    ChatMessage.RouteMsgOrBuilder getRouteMsgOrBuilder();
 
-    public Message.DataBodyCase getDataBodyCase();
+    public ChatMessage.Message.DataBodyCase getDataBodyCase();
   }
   /**
    * Protobuf type {@code Message}
@@ -368,14 +360,14 @@ public final class ChatMessage {
       dataType_ = 0;
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
+    protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new Message();
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -386,7 +378,7 @@ public final class ChatMessage {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -405,28 +397,28 @@ public final class ChatMessage {
               break;
             }
             case 18: {
-              ChatMsg.Builder subBuilder = null;
+              ChatMessage.ChatMsg.Builder subBuilder = null;
               if (dataBodyCase_ == 2) {
-                subBuilder = ((ChatMsg) dataBody_).toBuilder();
+                subBuilder = ((ChatMessage.ChatMsg) dataBody_).toBuilder();
               }
               dataBody_ =
-                  input.readMessage(ChatMsg.parser(), extensionRegistry);
+                  input.readMessage(ChatMessage.ChatMsg.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((ChatMsg) dataBody_);
+                subBuilder.mergeFrom((ChatMessage.ChatMsg) dataBody_);
                 dataBody_ = subBuilder.buildPartial();
               }
               dataBodyCase_ = 2;
               break;
             }
             case 26: {
-              RouteMsg.Builder subBuilder = null;
+              ChatMessage.RouteMsg.Builder subBuilder = null;
               if (dataBodyCase_ == 3) {
-                subBuilder = ((RouteMsg) dataBody_).toBuilder();
+                subBuilder = ((ChatMessage.RouteMsg) dataBody_).toBuilder();
               }
               dataBody_ =
-                  input.readMessage(RouteMsg.parser(), extensionRegistry);
+                  input.readMessage(ChatMessage.RouteMsg.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((RouteMsg) dataBody_);
+                subBuilder.mergeFrom((ChatMessage.RouteMsg) dataBody_);
                 dataBody_ = subBuilder.buildPartial();
               }
               dataBodyCase_ = 3;
@@ -456,12 +448,12 @@ public final class ChatMessage {
       return ChatMessage.internal_static_Message_descriptor;
     }
 
-    @Override
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ChatMessage.internal_static_Message_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Message.class, Builder.class);
+              ChatMessage.Message.class, ChatMessage.Message.Builder.class);
     }
 
     /**
@@ -490,10 +482,9 @@ public final class ChatMessage {
       public static final int RouteMsgType_VALUE = 1;
 
 
-      @Override
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
-          throw new IllegalArgumentException(
+          throw new java.lang.IllegalArgumentException(
               "Can't get the number of an unknown enum value.");
         }
         return value;
@@ -504,7 +495,7 @@ public final class ChatMessage {
        * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
-      @Deprecated
+      @java.lang.Deprecated
       public static DataType valueOf(int value) {
         return forNumber(value);
       }
@@ -528,29 +519,26 @@ public final class ChatMessage {
       private static final com.google.protobuf.Internal.EnumLiteMap<
           DataType> internalValueMap =
             new com.google.protobuf.Internal.EnumLiteMap<DataType>() {
-              @Override
               public DataType findValueByNumber(int number) {
                 return DataType.forNumber(number);
               }
             };
 
-      @Override
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
         if (this == UNRECOGNIZED) {
-          throw new IllegalStateException(
+          throw new java.lang.IllegalStateException(
               "Can't get the descriptor of an unrecognized enum value.");
         }
         return getDescriptor().getValues().get(ordinal());
       }
-      @Override
       public final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptorForType() {
         return getDescriptor();
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return Message.getDescriptor().getEnumTypes().get(0);
+        return ChatMessage.Message.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final DataType[] VALUES = values();
@@ -558,7 +546,7 @@ public final class ChatMessage {
       public static DataType valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
-          throw new IllegalArgumentException(
+          throw new java.lang.IllegalArgumentException(
             "EnumValueDescriptor is not for this type.");
         }
         if (desc.getIndex() == -1) {
@@ -577,7 +565,7 @@ public final class ChatMessage {
     }
 
     private int dataBodyCase_ = 0;
-    private Object dataBody_;
+    private java.lang.Object dataBody_;
     public enum DataBodyCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
@@ -593,7 +581,7 @@ public final class ChatMessage {
        * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
-      @Deprecated
+      @java.lang.Deprecated
       public static DataBodyCase valueOf(int value) {
         return forNumber(value);
       }
@@ -606,13 +594,11 @@ public final class ChatMessage {
           default: return null;
         }
       }
-      @Override
       public int getNumber() {
         return this.value;
       }
     };
 
-    @Override
     public DataBodyCase
     getDataBodyCase() {
       return DataBodyCase.forNumber(
@@ -625,17 +611,17 @@ public final class ChatMessage {
      * <code>.Message.DataType dataType = 1;</code>
      * @return The enum numeric value on the wire for dataType.
      */
-    @Override public int getDataTypeValue() {
+    @java.lang.Override public int getDataTypeValue() {
       return dataType_;
     }
     /**
      * <code>.Message.DataType dataType = 1;</code>
      * @return The dataType.
      */
-    @Override public DataType getDataType() {
+    @java.lang.Override public ChatMessage.Message.DataType getDataType() {
       @SuppressWarnings("deprecation")
-      DataType result = DataType.valueOf(dataType_);
-      return result == null ? DataType.UNRECOGNIZED : result;
+      ChatMessage.Message.DataType result = ChatMessage.Message.DataType.valueOf(dataType_);
+      return result == null ? ChatMessage.Message.DataType.UNRECOGNIZED : result;
     }
 
     public static final int CHATMSG_FIELD_NUMBER = 2;
@@ -643,7 +629,7 @@ public final class ChatMessage {
      * <code>.ChatMsg chatMsg = 2;</code>
      * @return Whether the chatMsg field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasChatMsg() {
       return dataBodyCase_ == 2;
     }
@@ -651,22 +637,22 @@ public final class ChatMessage {
      * <code>.ChatMsg chatMsg = 2;</code>
      * @return The chatMsg.
      */
-    @Override
-    public ChatMsg getChatMsg() {
+    @java.lang.Override
+    public ChatMessage.ChatMsg getChatMsg() {
       if (dataBodyCase_ == 2) {
-         return (ChatMsg) dataBody_;
+         return (ChatMessage.ChatMsg) dataBody_;
       }
-      return ChatMsg.getDefaultInstance();
+      return ChatMessage.ChatMsg.getDefaultInstance();
     }
     /**
      * <code>.ChatMsg chatMsg = 2;</code>
      */
-    @Override
-    public ChatMsgOrBuilder getChatMsgOrBuilder() {
+    @java.lang.Override
+    public ChatMessage.ChatMsgOrBuilder getChatMsgOrBuilder() {
       if (dataBodyCase_ == 2) {
-         return (ChatMsg) dataBody_;
+         return (ChatMessage.ChatMsg) dataBody_;
       }
-      return ChatMsg.getDefaultInstance();
+      return ChatMessage.ChatMsg.getDefaultInstance();
     }
 
     public static final int ROUTEMSG_FIELD_NUMBER = 3;
@@ -674,7 +660,7 @@ public final class ChatMessage {
      * <code>.RouteMsg RouteMsg = 3;</code>
      * @return Whether the routeMsg field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasRouteMsg() {
       return dataBodyCase_ == 3;
     }
@@ -682,115 +668,102 @@ public final class ChatMessage {
      * <code>.RouteMsg RouteMsg = 3;</code>
      * @return The routeMsg.
      */
-    @Override
-    public RouteMsg getRouteMsg() {
+    @java.lang.Override
+    public ChatMessage.RouteMsg getRouteMsg() {
       if (dataBodyCase_ == 3) {
-         return (RouteMsg) dataBody_;
+         return (ChatMessage.RouteMsg) dataBody_;
       }
-      return RouteMsg.getDefaultInstance();
+      return ChatMessage.RouteMsg.getDefaultInstance();
     }
     /**
      * <code>.RouteMsg RouteMsg = 3;</code>
      */
-    @Override
-    public RouteMsgOrBuilder getRouteMsgOrBuilder() {
+    @java.lang.Override
+    public ChatMessage.RouteMsgOrBuilder getRouteMsgOrBuilder() {
       if (dataBodyCase_ == 3) {
-         return (RouteMsg) dataBody_;
+         return (ChatMessage.RouteMsg) dataBody_;
       }
-      return RouteMsg.getDefaultInstance();
+      return ChatMessage.RouteMsg.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) {
-        return true;
-      }
-      if (isInitialized == 0) {
-        return false;
-      }
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (dataType_ != DataType.ChatMsgType.getNumber()) {
+      if (dataType_ != ChatMessage.Message.DataType.ChatMsgType.getNumber()) {
         output.writeEnum(1, dataType_);
       }
       if (dataBodyCase_ == 2) {
-        output.writeMessage(2, (ChatMsg) dataBody_);
+        output.writeMessage(2, (ChatMessage.ChatMsg) dataBody_);
       }
       if (dataBodyCase_ == 3) {
-        output.writeMessage(3, (RouteMsg) dataBody_);
+        output.writeMessage(3, (ChatMessage.RouteMsg) dataBody_);
       }
       unknownFields.writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) {
-        return size;
-      }
+      if (size != -1) return size;
 
       size = 0;
-      if (dataType_ != DataType.ChatMsgType.getNumber()) {
+      if (dataType_ != ChatMessage.Message.DataType.ChatMsgType.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, dataType_);
       }
       if (dataBodyCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (ChatMsg) dataBody_);
+          .computeMessageSize(2, (ChatMessage.ChatMsg) dataBody_);
       }
       if (dataBodyCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (RouteMsg) dataBody_);
+          .computeMessageSize(3, (ChatMessage.RouteMsg) dataBody_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof Message)) {
+      if (!(obj instanceof ChatMessage.Message)) {
         return super.equals(obj);
       }
-      Message other = (Message) obj;
+      ChatMessage.Message other = (ChatMessage.Message) obj;
 
-      if (dataType_ != other.dataType_) {
-        return false;
-      }
-      if (!getDataBodyCase().equals(other.getDataBodyCase())) {
-        return false;
-      }
+      if (dataType_ != other.dataType_) return false;
+      if (!getDataBodyCase().equals(other.getDataBodyCase())) return false;
       switch (dataBodyCase_) {
         case 2:
           if (!getChatMsg()
-              .equals(other.getChatMsg())) {
-            return false;
-          }
+              .equals(other.getChatMsg())) return false;
           break;
         case 3:
           if (!getRouteMsg()
-              .equals(other.getRouteMsg())) {
-            return false;
-          }
+              .equals(other.getRouteMsg())) return false;
           break;
         case 0:
         default:
       }
-      return unknownFields.equals(other.unknownFields);
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -816,69 +789,69 @@ public final class ChatMessage {
       return hash;
     }
 
-    public static Message parseFrom(
+    public static ChatMessage.Message parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Message parseFrom(
+    public static ChatMessage.Message parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Message parseFrom(
+    public static ChatMessage.Message parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Message parseFrom(
+    public static ChatMessage.Message parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Message parseFrom(byte[] data)
+    public static ChatMessage.Message parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Message parseFrom(
+    public static ChatMessage.Message parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Message parseFrom(java.io.InputStream input)
+    public static ChatMessage.Message parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Message parseFrom(
+    public static ChatMessage.Message parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Message parseDelimitedFrom(java.io.InputStream input)
+    public static ChatMessage.Message parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static Message parseDelimitedFrom(
+    public static ChatMessage.Message parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Message parseFrom(
+    public static ChatMessage.Message parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Message parseFrom(
+    public static ChatMessage.Message parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -886,21 +859,21 @@ public final class ChatMessage {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @Override
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(Message prototype) {
+    public static Builder newBuilder(ChatMessage.Message prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -912,22 +885,22 @@ public final class ChatMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Message)
-        MessageOrBuilder {
+        ChatMessage.MessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return ChatMessage.internal_static_Message_descriptor;
       }
 
-      @Override
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ChatMessage.internal_static_Message_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                Message.class, Builder.class);
+                ChatMessage.Message.class, ChatMessage.Message.Builder.class);
       }
 
       // Construct using ChatMessage.Message.newBuilder()
-      public Builder() {
+      private Builder() {
         maybeForceBuilderInitialization();
       }
 
@@ -941,7 +914,7 @@ public final class ChatMessage {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         dataType_ = 0;
@@ -951,29 +924,29 @@ public final class ChatMessage {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ChatMessage.internal_static_Message_descriptor;
       }
 
-      @Override
-      public Message getDefaultInstanceForType() {
-        return Message.getDefaultInstance();
+      @java.lang.Override
+      public ChatMessage.Message getDefaultInstanceForType() {
+        return ChatMessage.Message.getDefaultInstance();
       }
 
-      @Override
-      public Message build() {
-        Message result = buildPartial();
+      @java.lang.Override
+      public ChatMessage.Message build() {
+        ChatMessage.Message result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public Message buildPartial() {
-        Message result = new Message(this);
+      @java.lang.Override
+      public ChatMessage.Message buildPartial() {
+        ChatMessage.Message result = new ChatMessage.Message(this);
         result.dataType_ = dataType_;
         if (dataBodyCase_ == 2) {
           if (chatMsgBuilder_ == null) {
@@ -994,52 +967,50 @@ public final class ChatMessage {
         return result;
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Message) {
-          return mergeFrom((Message)other);
+        if (other instanceof ChatMessage.Message) {
+          return mergeFrom((ChatMessage.Message)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(Message other) {
-        if (other == Message.getDefaultInstance()) {
-          return this;
-        }
+      public Builder mergeFrom(ChatMessage.Message other) {
+        if (other == ChatMessage.Message.getDefaultInstance()) return this;
         if (other.dataType_ != 0) {
           setDataTypeValue(other.getDataTypeValue());
         }
@@ -1061,21 +1032,21 @@ public final class ChatMessage {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        Message parsedMessage = null;
+        ChatMessage.Message parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Message) e.getUnfinishedMessage();
+          parsedMessage = (ChatMessage.Message) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1085,8 +1056,7 @@ public final class ChatMessage {
         return this;
       }
       private int dataBodyCase_ = 0;
-      private Object dataBody_;
-      @Override
+      private java.lang.Object dataBody_;
       public DataBodyCase
           getDataBodyCase() {
         return DataBodyCase.forNumber(
@@ -1106,7 +1076,7 @@ public final class ChatMessage {
        * <code>.Message.DataType dataType = 1;</code>
        * @return The enum numeric value on the wire for dataType.
        */
-      @Override public int getDataTypeValue() {
+      @java.lang.Override public int getDataTypeValue() {
         return dataType_;
       }
       /**
@@ -1124,18 +1094,18 @@ public final class ChatMessage {
        * <code>.Message.DataType dataType = 1;</code>
        * @return The dataType.
        */
-      @Override
-      public DataType getDataType() {
+      @java.lang.Override
+      public ChatMessage.Message.DataType getDataType() {
         @SuppressWarnings("deprecation")
-        DataType result = DataType.valueOf(dataType_);
-        return result == null ? DataType.UNRECOGNIZED : result;
+        ChatMessage.Message.DataType result = ChatMessage.Message.DataType.valueOf(dataType_);
+        return result == null ? ChatMessage.Message.DataType.UNRECOGNIZED : result;
       }
       /**
        * <code>.Message.DataType dataType = 1;</code>
        * @param value The dataType to set.
        * @return This builder for chaining.
        */
-      public Builder setDataType(DataType value) {
+      public Builder setDataType(ChatMessage.Message.DataType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1156,12 +1126,12 @@ public final class ChatMessage {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          ChatMsg, ChatMsg.Builder, ChatMsgOrBuilder> chatMsgBuilder_;
+          ChatMessage.ChatMsg, ChatMessage.ChatMsg.Builder, ChatMessage.ChatMsgOrBuilder> chatMsgBuilder_;
       /**
        * <code>.ChatMsg chatMsg = 2;</code>
        * @return Whether the chatMsg field is set.
        */
-      @Override
+      @java.lang.Override
       public boolean hasChatMsg() {
         return dataBodyCase_ == 2;
       }
@@ -1169,24 +1139,24 @@ public final class ChatMessage {
        * <code>.ChatMsg chatMsg = 2;</code>
        * @return The chatMsg.
        */
-      @Override
-      public ChatMsg getChatMsg() {
+      @java.lang.Override
+      public ChatMessage.ChatMsg getChatMsg() {
         if (chatMsgBuilder_ == null) {
           if (dataBodyCase_ == 2) {
-            return (ChatMsg) dataBody_;
+            return (ChatMessage.ChatMsg) dataBody_;
           }
-          return ChatMsg.getDefaultInstance();
+          return ChatMessage.ChatMsg.getDefaultInstance();
         } else {
           if (dataBodyCase_ == 2) {
             return chatMsgBuilder_.getMessage();
           }
-          return ChatMsg.getDefaultInstance();
+          return ChatMessage.ChatMsg.getDefaultInstance();
         }
       }
       /**
        * <code>.ChatMsg chatMsg = 2;</code>
        */
-      public Builder setChatMsg(ChatMsg value) {
+      public Builder setChatMsg(ChatMessage.ChatMsg value) {
         if (chatMsgBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1203,7 +1173,7 @@ public final class ChatMessage {
        * <code>.ChatMsg chatMsg = 2;</code>
        */
       public Builder setChatMsg(
-          ChatMsg.Builder builderForValue) {
+          ChatMessage.ChatMsg.Builder builderForValue) {
         if (chatMsgBuilder_ == null) {
           dataBody_ = builderForValue.build();
           onChanged();
@@ -1216,11 +1186,11 @@ public final class ChatMessage {
       /**
        * <code>.ChatMsg chatMsg = 2;</code>
        */
-      public Builder mergeChatMsg(ChatMsg value) {
+      public Builder mergeChatMsg(ChatMessage.ChatMsg value) {
         if (chatMsgBuilder_ == null) {
           if (dataBodyCase_ == 2 &&
-              dataBody_ != ChatMsg.getDefaultInstance()) {
-            dataBody_ = ChatMsg.newBuilder((ChatMsg) dataBody_)
+              dataBody_ != ChatMessage.ChatMsg.getDefaultInstance()) {
+            dataBody_ = ChatMessage.ChatMsg.newBuilder((ChatMessage.ChatMsg) dataBody_)
                 .mergeFrom(value).buildPartial();
           } else {
             dataBody_ = value;
@@ -1257,36 +1227,36 @@ public final class ChatMessage {
       /**
        * <code>.ChatMsg chatMsg = 2;</code>
        */
-      public ChatMsg.Builder getChatMsgBuilder() {
+      public ChatMessage.ChatMsg.Builder getChatMsgBuilder() {
         return getChatMsgFieldBuilder().getBuilder();
       }
       /**
        * <code>.ChatMsg chatMsg = 2;</code>
        */
-      @Override
-      public ChatMsgOrBuilder getChatMsgOrBuilder() {
+      @java.lang.Override
+      public ChatMessage.ChatMsgOrBuilder getChatMsgOrBuilder() {
         if ((dataBodyCase_ == 2) && (chatMsgBuilder_ != null)) {
           return chatMsgBuilder_.getMessageOrBuilder();
         } else {
           if (dataBodyCase_ == 2) {
-            return (ChatMsg) dataBody_;
+            return (ChatMessage.ChatMsg) dataBody_;
           }
-          return ChatMsg.getDefaultInstance();
+          return ChatMessage.ChatMsg.getDefaultInstance();
         }
       }
       /**
        * <code>.ChatMsg chatMsg = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          ChatMsg, ChatMsg.Builder, ChatMsgOrBuilder>
+          ChatMessage.ChatMsg, ChatMessage.ChatMsg.Builder, ChatMessage.ChatMsgOrBuilder> 
           getChatMsgFieldBuilder() {
         if (chatMsgBuilder_ == null) {
           if (!(dataBodyCase_ == 2)) {
-            dataBody_ = ChatMsg.getDefaultInstance();
+            dataBody_ = ChatMessage.ChatMsg.getDefaultInstance();
           }
           chatMsgBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              ChatMsg, ChatMsg.Builder, ChatMsgOrBuilder>(
-                  (ChatMsg) dataBody_,
+              ChatMessage.ChatMsg, ChatMessage.ChatMsg.Builder, ChatMessage.ChatMsgOrBuilder>(
+                  (ChatMessage.ChatMsg) dataBody_,
                   getParentForChildren(),
                   isClean());
           dataBody_ = null;
@@ -1297,12 +1267,12 @@ public final class ChatMessage {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          RouteMsg, RouteMsg.Builder, RouteMsgOrBuilder> routeMsgBuilder_;
+          ChatMessage.RouteMsg, ChatMessage.RouteMsg.Builder, ChatMessage.RouteMsgOrBuilder> routeMsgBuilder_;
       /**
        * <code>.RouteMsg RouteMsg = 3;</code>
        * @return Whether the routeMsg field is set.
        */
-      @Override
+      @java.lang.Override
       public boolean hasRouteMsg() {
         return dataBodyCase_ == 3;
       }
@@ -1310,24 +1280,24 @@ public final class ChatMessage {
        * <code>.RouteMsg RouteMsg = 3;</code>
        * @return The routeMsg.
        */
-      @Override
-      public RouteMsg getRouteMsg() {
+      @java.lang.Override
+      public ChatMessage.RouteMsg getRouteMsg() {
         if (routeMsgBuilder_ == null) {
           if (dataBodyCase_ == 3) {
-            return (RouteMsg) dataBody_;
+            return (ChatMessage.RouteMsg) dataBody_;
           }
-          return RouteMsg.getDefaultInstance();
+          return ChatMessage.RouteMsg.getDefaultInstance();
         } else {
           if (dataBodyCase_ == 3) {
             return routeMsgBuilder_.getMessage();
           }
-          return RouteMsg.getDefaultInstance();
+          return ChatMessage.RouteMsg.getDefaultInstance();
         }
       }
       /**
        * <code>.RouteMsg RouteMsg = 3;</code>
        */
-      public Builder setRouteMsg(RouteMsg value) {
+      public Builder setRouteMsg(ChatMessage.RouteMsg value) {
         if (routeMsgBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1344,7 +1314,7 @@ public final class ChatMessage {
        * <code>.RouteMsg RouteMsg = 3;</code>
        */
       public Builder setRouteMsg(
-          RouteMsg.Builder builderForValue) {
+          ChatMessage.RouteMsg.Builder builderForValue) {
         if (routeMsgBuilder_ == null) {
           dataBody_ = builderForValue.build();
           onChanged();
@@ -1357,11 +1327,11 @@ public final class ChatMessage {
       /**
        * <code>.RouteMsg RouteMsg = 3;</code>
        */
-      public Builder mergeRouteMsg(RouteMsg value) {
+      public Builder mergeRouteMsg(ChatMessage.RouteMsg value) {
         if (routeMsgBuilder_ == null) {
           if (dataBodyCase_ == 3 &&
-              dataBody_ != RouteMsg.getDefaultInstance()) {
-            dataBody_ = RouteMsg.newBuilder((RouteMsg) dataBody_)
+              dataBody_ != ChatMessage.RouteMsg.getDefaultInstance()) {
+            dataBody_ = ChatMessage.RouteMsg.newBuilder((ChatMessage.RouteMsg) dataBody_)
                 .mergeFrom(value).buildPartial();
           } else {
             dataBody_ = value;
@@ -1398,36 +1368,36 @@ public final class ChatMessage {
       /**
        * <code>.RouteMsg RouteMsg = 3;</code>
        */
-      public RouteMsg.Builder getRouteMsgBuilder() {
+      public ChatMessage.RouteMsg.Builder getRouteMsgBuilder() {
         return getRouteMsgFieldBuilder().getBuilder();
       }
       /**
        * <code>.RouteMsg RouteMsg = 3;</code>
        */
-      @Override
-      public RouteMsgOrBuilder getRouteMsgOrBuilder() {
+      @java.lang.Override
+      public ChatMessage.RouteMsgOrBuilder getRouteMsgOrBuilder() {
         if ((dataBodyCase_ == 3) && (routeMsgBuilder_ != null)) {
           return routeMsgBuilder_.getMessageOrBuilder();
         } else {
           if (dataBodyCase_ == 3) {
-            return (RouteMsg) dataBody_;
+            return (ChatMessage.RouteMsg) dataBody_;
           }
-          return RouteMsg.getDefaultInstance();
+          return ChatMessage.RouteMsg.getDefaultInstance();
         }
       }
       /**
        * <code>.RouteMsg RouteMsg = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          RouteMsg, RouteMsg.Builder, RouteMsgOrBuilder>
+          ChatMessage.RouteMsg, ChatMessage.RouteMsg.Builder, ChatMessage.RouteMsgOrBuilder> 
           getRouteMsgFieldBuilder() {
         if (routeMsgBuilder_ == null) {
           if (!(dataBodyCase_ == 3)) {
-            dataBody_ = RouteMsg.getDefaultInstance();
+            dataBody_ = ChatMessage.RouteMsg.getDefaultInstance();
           }
           routeMsgBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              RouteMsg, RouteMsg.Builder, RouteMsgOrBuilder>(
-                  (RouteMsg) dataBody_,
+              ChatMessage.RouteMsg, ChatMessage.RouteMsg.Builder, ChatMessage.RouteMsgOrBuilder>(
+                  (ChatMessage.RouteMsg) dataBody_,
                   getParentForChildren(),
                   isClean());
           dataBody_ = null;
@@ -1436,13 +1406,13 @@ public final class ChatMessage {
         onChanged();;
         return routeMsgBuilder_;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1453,18 +1423,18 @@ public final class ChatMessage {
     }
 
     // @@protoc_insertion_point(class_scope:Message)
-    private static final Message DEFAULT_INSTANCE;
+    private static final ChatMessage.Message DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new Message();
+      DEFAULT_INSTANCE = new ChatMessage.Message();
     }
 
-    public static Message getDefaultInstance() {
+    public static ChatMessage.Message getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<Message>
         PARSER = new com.google.protobuf.AbstractParser<Message>() {
-      @Override
+      @java.lang.Override
       public Message parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1477,13 +1447,13 @@ public final class ChatMessage {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<Message> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public Message getDefaultInstanceForType() {
+    @java.lang.Override
+    public ChatMessage.Message getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1502,39 +1472,51 @@ public final class ChatMessage {
      * <code>.MsgActionEnum msgAction = 1;</code>
      * @return The msgAction.
      */
-    MsgActionEnum getMsgAction();
+    ChatMessage.MsgActionEnum getMsgAction();
 
     /**
-     * <code>string userId = 2;</code>
+     * <code>string msgId = 2;</code>
+     * @return The msgId.
+     */
+    java.lang.String getMsgId();
+    /**
+     * <code>string msgId = 2;</code>
+     * @return The bytes for msgId.
+     */
+    com.google.protobuf.ByteString
+        getMsgIdBytes();
+
+    /**
+     * <code>string userId = 3;</code>
      * @return The userId.
      */
-    String getUserId();
+    java.lang.String getUserId();
     /**
-     * <code>string userId = 2;</code>
+     * <code>string userId = 3;</code>
      * @return The bytes for userId.
      */
     com.google.protobuf.ByteString
         getUserIdBytes();
 
     /**
-     * <code>string toUserId = 3;</code>
+     * <code>string toUserId = 4;</code>
      * @return The toUserId.
      */
-    String getToUserId();
+    java.lang.String getToUserId();
     /**
-     * <code>string toUserId = 3;</code>
+     * <code>string toUserId = 4;</code>
      * @return The bytes for toUserId.
      */
     com.google.protobuf.ByteString
         getToUserIdBytes();
 
     /**
-     * <code>string data = 4;</code>
+     * <code>string data = 5;</code>
      * @return The data.
      */
-    String getData();
+    java.lang.String getData();
     /**
-     * <code>string data = 4;</code>
+     * <code>string data = 5;</code>
      * @return The bytes for data.
      */
     com.google.protobuf.ByteString
@@ -1554,19 +1536,20 @@ public final class ChatMessage {
     }
     private ChatMsg() {
       msgAction_ = 0;
+      msgId_ = "";
       userId_ = "";
       toUserId_ = "";
       data_ = "";
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
+    protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new ChatMsg();
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1577,7 +1560,7 @@ public final class ChatMessage {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1596,19 +1579,25 @@ public final class ChatMessage {
               break;
             }
             case 18: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
+
+              msgId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
 
               userId_ = s;
               break;
             }
-            case 26: {
-              String s = input.readStringRequireUtf8();
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
               toUserId_ = s;
               break;
             }
-            case 34: {
-              String s = input.readStringRequireUtf8();
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
 
               data_ = s;
               break;
@@ -1637,12 +1626,12 @@ public final class ChatMessage {
       return ChatMessage.internal_static_ChatMsg_descriptor;
     }
 
-    @Override
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ChatMessage.internal_static_ChatMsg_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ChatMsg.class, Builder.class);
+              ChatMessage.ChatMsg.class, ChatMessage.ChatMsg.Builder.class);
     }
 
     public static final int MSGACTION_FIELD_NUMBER = 1;
@@ -1651,50 +1640,88 @@ public final class ChatMessage {
      * <code>.MsgActionEnum msgAction = 1;</code>
      * @return The enum numeric value on the wire for msgAction.
      */
-    @Override public int getMsgActionValue() {
+    @java.lang.Override public int getMsgActionValue() {
       return msgAction_;
     }
     /**
      * <code>.MsgActionEnum msgAction = 1;</code>
      * @return The msgAction.
      */
-    @Override public MsgActionEnum getMsgAction() {
+    @java.lang.Override public ChatMessage.MsgActionEnum getMsgAction() {
       @SuppressWarnings("deprecation")
-      MsgActionEnum result = MsgActionEnum.valueOf(msgAction_);
-      return result == null ? MsgActionEnum.UNRECOGNIZED : result;
+      ChatMessage.MsgActionEnum result = ChatMessage.MsgActionEnum.valueOf(msgAction_);
+      return result == null ? ChatMessage.MsgActionEnum.UNRECOGNIZED : result;
     }
 
-    public static final int USERID_FIELD_NUMBER = 2;
-    private volatile Object userId_;
+    public static final int MSGID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object msgId_;
     /**
-     * <code>string userId = 2;</code>
+     * <code>string msgId = 2;</code>
+     * @return The msgId.
+     */
+    @java.lang.Override
+    public java.lang.String getMsgId() {
+      java.lang.Object ref = msgId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        msgId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string msgId = 2;</code>
+     * @return The bytes for msgId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMsgIdBytes() {
+      java.lang.Object ref = msgId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msgId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USERID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object userId_;
+    /**
+     * <code>string userId = 3;</code>
      * @return The userId.
      */
-    @Override
-    public String getUserId() {
-      Object ref = userId_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         userId_ = s;
         return s;
       }
     }
     /**
-     * <code>string userId = 2;</code>
+     * <code>string userId = 3;</code>
      * @return The bytes for userId.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getUserIdBytes() {
-      Object ref = userId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         userId_ = b;
         return b;
       } else {
@@ -1702,37 +1729,37 @@ public final class ChatMessage {
       }
     }
 
-    public static final int TOUSERID_FIELD_NUMBER = 3;
-    private volatile Object toUserId_;
+    public static final int TOUSERID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object toUserId_;
     /**
-     * <code>string toUserId = 3;</code>
+     * <code>string toUserId = 4;</code>
      * @return The toUserId.
      */
-    @Override
-    public String getToUserId() {
-      Object ref = toUserId_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getToUserId() {
+      java.lang.Object ref = toUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         toUserId_ = s;
         return s;
       }
     }
     /**
-     * <code>string toUserId = 3;</code>
+     * <code>string toUserId = 4;</code>
      * @return The bytes for toUserId.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getToUserIdBytes() {
-      Object ref = toUserId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+      java.lang.Object ref = toUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         toUserId_ = b;
         return b;
       } else {
@@ -1740,37 +1767,37 @@ public final class ChatMessage {
       }
     }
 
-    public static final int DATA_FIELD_NUMBER = 4;
-    private volatile Object data_;
+    public static final int DATA_FIELD_NUMBER = 5;
+    private volatile java.lang.Object data_;
     /**
-     * <code>string data = 4;</code>
+     * <code>string data = 5;</code>
      * @return The data.
      */
-    @Override
-    public String getData() {
-      Object ref = data_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getData() {
+      java.lang.Object ref = data_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         data_ = s;
         return s;
       }
     }
     /**
-     * <code>string data = 4;</code>
+     * <code>string data = 5;</code>
      * @return The bytes for data.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDataBytes() {
-      Object ref = data_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+      java.lang.Object ref = data_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         data_ = b;
         return b;
       } else {
@@ -1779,96 +1806,88 @@ public final class ChatMessage {
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) {
-        return true;
-      }
-      if (isInitialized == 0) {
-        return false;
-      }
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (msgAction_ != MsgActionEnum.CONNECT.getNumber()) {
+      if (msgAction_ != ChatMessage.MsgActionEnum.CONNECT.getNumber()) {
         output.writeEnum(1, msgAction_);
       }
+      if (!getMsgIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msgId_);
+      }
       if (!getUserIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userId_);
       }
       if (!getToUserIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, toUserId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, toUserId_);
       }
       if (!getDataBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, data_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, data_);
       }
       unknownFields.writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) {
-        return size;
-      }
+      if (size != -1) return size;
 
       size = 0;
-      if (msgAction_ != MsgActionEnum.CONNECT.getNumber()) {
+      if (msgAction_ != ChatMessage.MsgActionEnum.CONNECT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, msgAction_);
       }
+      if (!getMsgIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msgId_);
+      }
       if (!getUserIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userId_);
       }
       if (!getToUserIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, toUserId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, toUserId_);
       }
       if (!getDataBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, data_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, data_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof ChatMsg)) {
+      if (!(obj instanceof ChatMessage.ChatMsg)) {
         return super.equals(obj);
       }
-      ChatMsg other = (ChatMsg) obj;
+      ChatMessage.ChatMsg other = (ChatMessage.ChatMsg) obj;
 
-      if (msgAction_ != other.msgAction_) {
-        return false;
-      }
+      if (msgAction_ != other.msgAction_) return false;
+      if (!getMsgId()
+          .equals(other.getMsgId())) return false;
       if (!getUserId()
-          .equals(other.getUserId())) {
-        return false;
-      }
+          .equals(other.getUserId())) return false;
       if (!getToUserId()
-          .equals(other.getToUserId())) {
-        return false;
-      }
+          .equals(other.getToUserId())) return false;
       if (!getData()
-          .equals(other.getData())) {
-        return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) {
-        return false;
-      }
+          .equals(other.getData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -1877,6 +1896,8 @@ public final class ChatMessage {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MSGACTION_FIELD_NUMBER;
       hash = (53 * hash) + msgAction_;
+      hash = (37 * hash) + MSGID_FIELD_NUMBER;
+      hash = (53 * hash) + getMsgId().hashCode();
       hash = (37 * hash) + USERID_FIELD_NUMBER;
       hash = (53 * hash) + getUserId().hashCode();
       hash = (37 * hash) + TOUSERID_FIELD_NUMBER;
@@ -1888,69 +1909,69 @@ public final class ChatMessage {
       return hash;
     }
 
-    public static ChatMsg parseFrom(
+    public static ChatMessage.ChatMsg parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ChatMsg parseFrom(
+    public static ChatMessage.ChatMsg parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ChatMsg parseFrom(
+    public static ChatMessage.ChatMsg parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ChatMsg parseFrom(
+    public static ChatMessage.ChatMsg parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ChatMsg parseFrom(byte[] data)
+    public static ChatMessage.ChatMsg parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ChatMsg parseFrom(
+    public static ChatMessage.ChatMsg parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ChatMsg parseFrom(java.io.InputStream input)
+    public static ChatMessage.ChatMsg parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ChatMsg parseFrom(
+    public static ChatMessage.ChatMsg parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ChatMsg parseDelimitedFrom(java.io.InputStream input)
+    public static ChatMessage.ChatMsg parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static ChatMsg parseDelimitedFrom(
+    public static ChatMessage.ChatMsg parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ChatMsg parseFrom(
+    public static ChatMessage.ChatMsg parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ChatMsg parseFrom(
+    public static ChatMessage.ChatMsg parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1958,21 +1979,21 @@ public final class ChatMessage {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @Override
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(ChatMsg prototype) {
+    public static Builder newBuilder(ChatMessage.ChatMsg prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -1984,18 +2005,18 @@ public final class ChatMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ChatMsg)
-        ChatMsgOrBuilder {
+        ChatMessage.ChatMsgOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return ChatMessage.internal_static_ChatMsg_descriptor;
       }
 
-      @Override
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ChatMessage.internal_static_ChatMsg_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                ChatMsg.class, Builder.class);
+                ChatMessage.ChatMsg.class, ChatMessage.ChatMsg.Builder.class);
       }
 
       // Construct using ChatMessage.ChatMsg.newBuilder()
@@ -2013,10 +2034,12 @@ public final class ChatMessage {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         msgAction_ = 0;
+
+        msgId_ = "";
 
         userId_ = "";
 
@@ -2027,30 +2050,31 @@ public final class ChatMessage {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ChatMessage.internal_static_ChatMsg_descriptor;
       }
 
-      @Override
-      public ChatMsg getDefaultInstanceForType() {
-        return ChatMsg.getDefaultInstance();
+      @java.lang.Override
+      public ChatMessage.ChatMsg getDefaultInstanceForType() {
+        return ChatMessage.ChatMsg.getDefaultInstance();
       }
 
-      @Override
-      public ChatMsg build() {
-        ChatMsg result = buildPartial();
+      @java.lang.Override
+      public ChatMessage.ChatMsg build() {
+        ChatMessage.ChatMsg result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public ChatMsg buildPartial() {
-        ChatMsg result = new ChatMsg(this);
+      @java.lang.Override
+      public ChatMessage.ChatMsg buildPartial() {
+        ChatMessage.ChatMsg result = new ChatMessage.ChatMsg(this);
         result.msgAction_ = msgAction_;
+        result.msgId_ = msgId_;
         result.userId_ = userId_;
         result.toUserId_ = toUserId_;
         result.data_ = data_;
@@ -2058,54 +2082,56 @@ public final class ChatMessage {
         return result;
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ChatMsg) {
-          return mergeFrom((ChatMsg)other);
+        if (other instanceof ChatMessage.ChatMsg) {
+          return mergeFrom((ChatMessage.ChatMsg)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(ChatMsg other) {
-        if (other == ChatMsg.getDefaultInstance()) {
-          return this;
-        }
+      public Builder mergeFrom(ChatMessage.ChatMsg other) {
+        if (other == ChatMessage.ChatMsg.getDefaultInstance()) return this;
         if (other.msgAction_ != 0) {
           setMsgActionValue(other.getMsgActionValue());
+        }
+        if (!other.getMsgId().isEmpty()) {
+          msgId_ = other.msgId_;
+          onChanged();
         }
         if (!other.getUserId().isEmpty()) {
           userId_ = other.userId_;
@@ -2124,21 +2150,21 @@ public final class ChatMessage {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ChatMsg parsedMessage = null;
+        ChatMessage.ChatMsg parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ChatMsg) e.getUnfinishedMessage();
+          parsedMessage = (ChatMessage.ChatMsg) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2153,7 +2179,7 @@ public final class ChatMessage {
        * <code>.MsgActionEnum msgAction = 1;</code>
        * @return The enum numeric value on the wire for msgAction.
        */
-      @Override public int getMsgActionValue() {
+      @java.lang.Override public int getMsgActionValue() {
         return msgAction_;
       }
       /**
@@ -2171,18 +2197,18 @@ public final class ChatMessage {
        * <code>.MsgActionEnum msgAction = 1;</code>
        * @return The msgAction.
        */
-      @Override
-      public MsgActionEnum getMsgAction() {
+      @java.lang.Override
+      public ChatMessage.MsgActionEnum getMsgAction() {
         @SuppressWarnings("deprecation")
-        MsgActionEnum result = MsgActionEnum.valueOf(msgAction_);
-        return result == null ? MsgActionEnum.UNRECOGNIZED : result;
+        ChatMessage.MsgActionEnum result = ChatMessage.MsgActionEnum.valueOf(msgAction_);
+        return result == null ? ChatMessage.MsgActionEnum.UNRECOGNIZED : result;
       }
       /**
        * <code>.MsgActionEnum msgAction = 1;</code>
        * @param value The msgAction to set.
        * @return This builder for chaining.
        */
-      public Builder setMsgAction(MsgActionEnum value) {
+      public Builder setMsgAction(ChatMessage.MsgActionEnum value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2202,36 +2228,110 @@ public final class ChatMessage {
         return this;
       }
 
-      private Object userId_ = "";
+      private java.lang.Object msgId_ = "";
       /**
-       * <code>string userId = 2;</code>
-       * @return The userId.
+       * <code>string msgId = 2;</code>
+       * @return The msgId.
        */
-      @Override
-      public String getUserId() {
-        Object ref = userId_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMsgId() {
+        java.lang.Object ref = msgId_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          userId_ = s;
+          java.lang.String s = bs.toStringUtf8();
+          msgId_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string userId = 2;</code>
+       * <code>string msgId = 2;</code>
+       * @return The bytes for msgId.
+       */
+      public com.google.protobuf.ByteString
+          getMsgIdBytes() {
+        java.lang.Object ref = msgId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          msgId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string msgId = 2;</code>
+       * @param value The msgId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsgId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        msgId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msgId = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMsgId() {
+        
+        msgId_ = getDefaultInstance().getMsgId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msgId = 2;</code>
+       * @param value The bytes for msgId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsgIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        msgId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>string userId = 3;</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string userId = 3;</code>
        * @return The bytes for userId.
        */
-      @Override
       public com.google.protobuf.ByteString
           getUserIdBytes() {
-        Object ref = userId_;
+        java.lang.Object ref = userId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           userId_ = b;
           return b;
         } else {
@@ -2239,12 +2339,12 @@ public final class ChatMessage {
         }
       }
       /**
-       * <code>string userId = 2;</code>
+       * <code>string userId = 3;</code>
        * @param value The userId to set.
        * @return This builder for chaining.
        */
       public Builder setUserId(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2254,7 +2354,7 @@ public final class ChatMessage {
         return this;
       }
       /**
-       * <code>string userId = 2;</code>
+       * <code>string userId = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearUserId() {
@@ -2264,7 +2364,7 @@ public final class ChatMessage {
         return this;
       }
       /**
-       * <code>string userId = 2;</code>
+       * <code>string userId = 3;</code>
        * @param value The bytes for userId to set.
        * @return This builder for chaining.
        */
@@ -2280,36 +2380,34 @@ public final class ChatMessage {
         return this;
       }
 
-      private Object toUserId_ = "";
+      private java.lang.Object toUserId_ = "";
       /**
-       * <code>string toUserId = 3;</code>
+       * <code>string toUserId = 4;</code>
        * @return The toUserId.
        */
-      @Override
-      public String getToUserId() {
-        Object ref = toUserId_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getToUserId() {
+        java.lang.Object ref = toUserId_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           toUserId_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string toUserId = 3;</code>
+       * <code>string toUserId = 4;</code>
        * @return The bytes for toUserId.
        */
-      @Override
       public com.google.protobuf.ByteString
           getToUserIdBytes() {
-        Object ref = toUserId_;
+        java.lang.Object ref = toUserId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           toUserId_ = b;
           return b;
         } else {
@@ -2317,12 +2415,12 @@ public final class ChatMessage {
         }
       }
       /**
-       * <code>string toUserId = 3;</code>
+       * <code>string toUserId = 4;</code>
        * @param value The toUserId to set.
        * @return This builder for chaining.
        */
       public Builder setToUserId(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2332,7 +2430,7 @@ public final class ChatMessage {
         return this;
       }
       /**
-       * <code>string toUserId = 3;</code>
+       * <code>string toUserId = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearToUserId() {
@@ -2342,7 +2440,7 @@ public final class ChatMessage {
         return this;
       }
       /**
-       * <code>string toUserId = 3;</code>
+       * <code>string toUserId = 4;</code>
        * @param value The bytes for toUserId to set.
        * @return This builder for chaining.
        */
@@ -2358,36 +2456,34 @@ public final class ChatMessage {
         return this;
       }
 
-      private Object data_ = "";
+      private java.lang.Object data_ = "";
       /**
-       * <code>string data = 4;</code>
+       * <code>string data = 5;</code>
        * @return The data.
        */
-      @Override
-      public String getData() {
-        Object ref = data_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getData() {
+        java.lang.Object ref = data_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           data_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string data = 4;</code>
+       * <code>string data = 5;</code>
        * @return The bytes for data.
        */
-      @Override
       public com.google.protobuf.ByteString
           getDataBytes() {
-        Object ref = data_;
+        java.lang.Object ref = data_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           data_ = b;
           return b;
         } else {
@@ -2395,12 +2491,12 @@ public final class ChatMessage {
         }
       }
       /**
-       * <code>string data = 4;</code>
+       * <code>string data = 5;</code>
        * @param value The data to set.
        * @return This builder for chaining.
        */
       public Builder setData(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2410,7 +2506,7 @@ public final class ChatMessage {
         return this;
       }
       /**
-       * <code>string data = 4;</code>
+       * <code>string data = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearData() {
@@ -2420,7 +2516,7 @@ public final class ChatMessage {
         return this;
       }
       /**
-       * <code>string data = 4;</code>
+       * <code>string data = 5;</code>
        * @param value The bytes for data to set.
        * @return This builder for chaining.
        */
@@ -2435,13 +2531,13 @@ public final class ChatMessage {
         onChanged();
         return this;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2452,18 +2548,18 @@ public final class ChatMessage {
     }
 
     // @@protoc_insertion_point(class_scope:ChatMsg)
-    private static final ChatMsg DEFAULT_INSTANCE;
+    private static final ChatMessage.ChatMsg DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ChatMsg();
+      DEFAULT_INSTANCE = new ChatMessage.ChatMsg();
     }
 
-    public static ChatMsg getDefaultInstance() {
+    public static ChatMessage.ChatMsg getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<ChatMsg>
         PARSER = new com.google.protobuf.AbstractParser<ChatMsg>() {
-      @Override
+      @java.lang.Override
       public ChatMsg parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2476,13 +2572,13 @@ public final class ChatMessage {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<ChatMsg> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public ChatMsg getDefaultInstanceForType() {
+    @java.lang.Override
+    public ChatMessage.ChatMsg getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2501,13 +2597,13 @@ public final class ChatMessage {
      * <code>.RouteMsgActionEnum msgAction = 1;</code>
      * @return The msgAction.
      */
-    RouteMsgActionEnum getMsgAction();
+    ChatMessage.RouteMsgActionEnum getMsgAction();
 
     /**
      * <code>string data = 2;</code>
      * @return The data.
      */
-    String getData();
+    java.lang.String getData();
     /**
      * <code>string data = 2;</code>
      * @return The bytes for data.
@@ -2532,14 +2628,14 @@ public final class ChatMessage {
       data_ = "";
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
+    protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new RouteMsg();
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -2550,7 +2646,7 @@ public final class ChatMessage {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new NullPointerException();
+        throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2569,7 +2665,7 @@ public final class ChatMessage {
               break;
             }
             case 18: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               data_ = s;
               break;
@@ -2598,12 +2694,12 @@ public final class ChatMessage {
       return ChatMessage.internal_static_RouteMsg_descriptor;
     }
 
-    @Override
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ChatMessage.internal_static_RouteMsg_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              RouteMsg.class, Builder.class);
+              ChatMessage.RouteMsg.class, ChatMessage.RouteMsg.Builder.class);
     }
 
     public static final int MSGACTION_FIELD_NUMBER = 1;
@@ -2612,34 +2708,34 @@ public final class ChatMessage {
      * <code>.RouteMsgActionEnum msgAction = 1;</code>
      * @return The enum numeric value on the wire for msgAction.
      */
-    @Override public int getMsgActionValue() {
+    @java.lang.Override public int getMsgActionValue() {
       return msgAction_;
     }
     /**
      * <code>.RouteMsgActionEnum msgAction = 1;</code>
      * @return The msgAction.
      */
-    @Override public RouteMsgActionEnum getMsgAction() {
+    @java.lang.Override public ChatMessage.RouteMsgActionEnum getMsgAction() {
       @SuppressWarnings("deprecation")
-      RouteMsgActionEnum result = RouteMsgActionEnum.valueOf(msgAction_);
-      return result == null ? RouteMsgActionEnum.UNRECOGNIZED : result;
+      ChatMessage.RouteMsgActionEnum result = ChatMessage.RouteMsgActionEnum.valueOf(msgAction_);
+      return result == null ? ChatMessage.RouteMsgActionEnum.UNRECOGNIZED : result;
     }
 
     public static final int DATA_FIELD_NUMBER = 2;
-    private volatile Object data_;
+    private volatile java.lang.Object data_;
     /**
      * <code>string data = 2;</code>
      * @return The data.
      */
-    @Override
-    public String getData() {
-      Object ref = data_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getData() {
+      java.lang.Object ref = data_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         data_ = s;
         return s;
       }
@@ -2648,14 +2744,14 @@ public final class ChatMessage {
      * <code>string data = 2;</code>
      * @return The bytes for data.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDataBytes() {
-      Object ref = data_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+      java.lang.Object ref = data_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         data_ = b;
         return b;
       } else {
@@ -2664,24 +2760,20 @@ public final class ChatMessage {
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) {
-        return true;
-      }
-      if (isInitialized == 0) {
-        return false;
-      }
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (msgAction_ != RouteMsgActionEnum.SHUTDOWN_USER.getNumber()) {
+      if (msgAction_ != ChatMessage.RouteMsgActionEnum.SHUTDOWN_USER.getNumber()) {
         output.writeEnum(1, msgAction_);
       }
       if (!getDataBytes().isEmpty()) {
@@ -2690,15 +2782,13 @@ public final class ChatMessage {
       unknownFields.writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) {
-        return size;
-      }
+      if (size != -1) return size;
 
       size = 0;
-      if (msgAction_ != RouteMsgActionEnum.SHUTDOWN_USER.getNumber()) {
+      if (msgAction_ != ChatMessage.RouteMsgActionEnum.SHUTDOWN_USER.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, msgAction_);
       }
@@ -2710,30 +2800,24 @@ public final class ChatMessage {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof RouteMsg)) {
+      if (!(obj instanceof ChatMessage.RouteMsg)) {
         return super.equals(obj);
       }
-      RouteMsg other = (RouteMsg) obj;
+      ChatMessage.RouteMsg other = (ChatMessage.RouteMsg) obj;
 
-      if (msgAction_ != other.msgAction_) {
-        return false;
-      }
+      if (msgAction_ != other.msgAction_) return false;
       if (!getData()
-          .equals(other.getData())) {
-        return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) {
-        return false;
-      }
+          .equals(other.getData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -2749,69 +2833,69 @@ public final class ChatMessage {
       return hash;
     }
 
-    public static RouteMsg parseFrom(
+    public static ChatMessage.RouteMsg parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static RouteMsg parseFrom(
+    public static ChatMessage.RouteMsg parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RouteMsg parseFrom(
+    public static ChatMessage.RouteMsg parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static RouteMsg parseFrom(
+    public static ChatMessage.RouteMsg parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RouteMsg parseFrom(byte[] data)
+    public static ChatMessage.RouteMsg parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static RouteMsg parseFrom(
+    public static ChatMessage.RouteMsg parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RouteMsg parseFrom(java.io.InputStream input)
+    public static ChatMessage.RouteMsg parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static RouteMsg parseFrom(
+    public static ChatMessage.RouteMsg parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static RouteMsg parseDelimitedFrom(java.io.InputStream input)
+    public static ChatMessage.RouteMsg parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static RouteMsg parseDelimitedFrom(
+    public static ChatMessage.RouteMsg parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static RouteMsg parseFrom(
+    public static ChatMessage.RouteMsg parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static RouteMsg parseFrom(
+    public static ChatMessage.RouteMsg parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2819,21 +2903,21 @@ public final class ChatMessage {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @Override
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(RouteMsg prototype) {
+    public static Builder newBuilder(ChatMessage.RouteMsg prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -2845,22 +2929,22 @@ public final class ChatMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:RouteMsg)
-        RouteMsgOrBuilder {
+        ChatMessage.RouteMsgOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return ChatMessage.internal_static_RouteMsg_descriptor;
       }
 
-      @Override
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ChatMessage.internal_static_RouteMsg_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                RouteMsg.class, Builder.class);
+                ChatMessage.RouteMsg.class, ChatMessage.RouteMsg.Builder.class);
       }
 
       // Construct using ChatMessage.RouteMsg.newBuilder()
-      public Builder() {
+      private Builder() {
         maybeForceBuilderInitialization();
       }
 
@@ -2874,7 +2958,7 @@ public final class ChatMessage {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         msgAction_ = 0;
@@ -2884,81 +2968,79 @@ public final class ChatMessage {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ChatMessage.internal_static_RouteMsg_descriptor;
       }
 
-      @Override
-      public RouteMsg getDefaultInstanceForType() {
-        return RouteMsg.getDefaultInstance();
+      @java.lang.Override
+      public ChatMessage.RouteMsg getDefaultInstanceForType() {
+        return ChatMessage.RouteMsg.getDefaultInstance();
       }
 
-      @Override
-      public RouteMsg build() {
-        RouteMsg result = buildPartial();
+      @java.lang.Override
+      public ChatMessage.RouteMsg build() {
+        ChatMessage.RouteMsg result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public RouteMsg buildPartial() {
-        RouteMsg result = new RouteMsg(this);
+      @java.lang.Override
+      public ChatMessage.RouteMsg buildPartial() {
+        ChatMessage.RouteMsg result = new ChatMessage.RouteMsg(this);
         result.msgAction_ = msgAction_;
         result.data_ = data_;
         onBuilt();
         return result;
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof RouteMsg) {
-          return mergeFrom((RouteMsg)other);
+        if (other instanceof ChatMessage.RouteMsg) {
+          return mergeFrom((ChatMessage.RouteMsg)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(RouteMsg other) {
-        if (other == RouteMsg.getDefaultInstance()) {
-          return this;
-        }
+      public Builder mergeFrom(ChatMessage.RouteMsg other) {
+        if (other == ChatMessage.RouteMsg.getDefaultInstance()) return this;
         if (other.msgAction_ != 0) {
           setMsgActionValue(other.getMsgActionValue());
         }
@@ -2971,21 +3053,21 @@ public final class ChatMessage {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        RouteMsg parsedMessage = null;
+        ChatMessage.RouteMsg parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (RouteMsg) e.getUnfinishedMessage();
+          parsedMessage = (ChatMessage.RouteMsg) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3000,7 +3082,7 @@ public final class ChatMessage {
        * <code>.RouteMsgActionEnum msgAction = 1;</code>
        * @return The enum numeric value on the wire for msgAction.
        */
-      @Override public int getMsgActionValue() {
+      @java.lang.Override public int getMsgActionValue() {
         return msgAction_;
       }
       /**
@@ -3018,18 +3100,18 @@ public final class ChatMessage {
        * <code>.RouteMsgActionEnum msgAction = 1;</code>
        * @return The msgAction.
        */
-      @Override
-      public RouteMsgActionEnum getMsgAction() {
+      @java.lang.Override
+      public ChatMessage.RouteMsgActionEnum getMsgAction() {
         @SuppressWarnings("deprecation")
-        RouteMsgActionEnum result = RouteMsgActionEnum.valueOf(msgAction_);
-        return result == null ? RouteMsgActionEnum.UNRECOGNIZED : result;
+        ChatMessage.RouteMsgActionEnum result = ChatMessage.RouteMsgActionEnum.valueOf(msgAction_);
+        return result == null ? ChatMessage.RouteMsgActionEnum.UNRECOGNIZED : result;
       }
       /**
        * <code>.RouteMsgActionEnum msgAction = 1;</code>
        * @param value The msgAction to set.
        * @return This builder for chaining.
        */
-      public Builder setMsgAction(RouteMsgActionEnum value) {
+      public Builder setMsgAction(ChatMessage.RouteMsgActionEnum value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -3049,36 +3131,34 @@ public final class ChatMessage {
         return this;
       }
 
-      private Object data_ = "";
+      private java.lang.Object data_ = "";
       /**
        * <code>string data = 2;</code>
        * @return The data.
        */
-      @Override
-      public String getData() {
-        Object ref = data_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getData() {
+        java.lang.Object ref = data_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           data_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
        * <code>string data = 2;</code>
        * @return The bytes for data.
        */
-      @Override
       public com.google.protobuf.ByteString
           getDataBytes() {
-        Object ref = data_;
+        java.lang.Object ref = data_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           data_ = b;
           return b;
         } else {
@@ -3091,7 +3171,7 @@ public final class ChatMessage {
        * @return This builder for chaining.
        */
       public Builder setData(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3126,13 +3206,13 @@ public final class ChatMessage {
         onChanged();
         return this;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -3143,18 +3223,18 @@ public final class ChatMessage {
     }
 
     // @@protoc_insertion_point(class_scope:RouteMsg)
-    private static final RouteMsg DEFAULT_INSTANCE;
+    private static final ChatMessage.RouteMsg DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new RouteMsg();
+      DEFAULT_INSTANCE = new ChatMessage.RouteMsg();
     }
 
-    public static RouteMsg getDefaultInstance() {
+    public static ChatMessage.RouteMsg getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<RouteMsg>
         PARSER = new com.google.protobuf.AbstractParser<RouteMsg>() {
-      @Override
+      @java.lang.Override
       public RouteMsg parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3167,13 +3247,13 @@ public final class ChatMessage {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<RouteMsg> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public RouteMsg getDefaultInstanceForType() {
+    @java.lang.Override
+    public ChatMessage.RouteMsg getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3181,17 +3261,17 @@ public final class ChatMessage {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Message_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Message_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ChatMsg_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ChatMsg_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_RouteMsg_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_RouteMsg_fieldAccessorTable;
 
@@ -3202,21 +3282,21 @@ public final class ChatMessage {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\021ChatMessage.proto\"\245\001\n\007Message\022#\n\010dataT" +
       "ype\030\001 \001(\0162\021.Message.DataType\022\033\n\007chatMsg\030" +
       "\002 \001(\0132\010.ChatMsgH\000\022\035\n\010RouteMsg\030\003 \001(\0132\t.Ro" +
       "uteMsgH\000\"-\n\010DataType\022\017\n\013ChatMsgType\020\000\022\020\n" +
-      "\014RouteMsgType\020\001B\n\n\010dataBody\"\\\n\007ChatMsg\022!" +
-      "\n\tmsgAction\030\001 \001(\0162\016.MsgActionEnum\022\016\n\006use" +
-      "rId\030\002 \001(\t\022\020\n\010toUserId\030\003 \001(\t\022\014\n\004data\030\004 \001(" +
-      "\t\"@\n\010RouteMsg\022&\n\tmsgAction\030\001 \001(\0162\023.Route" +
-      "MsgActionEnum\022\014\n\004data\030\002 \001(\t*C\n\rMsgAction" +
-      "Enum\022\013\n\007CONNECT\020\000\022\010\n\004CHAT\020\001\022\n\n\006SIGNED\020\002\022" +
-      "\017\n\013PULL_FRIEND\020\003*^\n\022RouteMsgActionEnum\022\021" +
-      "\n\rSHUTDOWN_USER\020\000\022\014\n\010REGISTER\020\001\022\031\n\025PUSH_" +
-      "ALL_USER_MESSAGE\020\002\022\014\n\010ALL_USER\020\003B\rB\013Chat" +
-      "Messageb\006proto3"
+      "\014RouteMsgType\020\001B\n\n\010dataBody\"k\n\007ChatMsg\022!" +
+      "\n\tmsgAction\030\001 \001(\0162\016.MsgActionEnum\022\r\n\005msg" +
+      "Id\030\002 \001(\t\022\016\n\006userId\030\003 \001(\t\022\020\n\010toUserId\030\004 \001" +
+      "(\t\022\014\n\004data\030\005 \001(\t\"@\n\010RouteMsg\022&\n\tmsgActio" +
+      "n\030\001 \001(\0162\023.RouteMsgActionEnum\022\014\n\004data\030\002 \001" +
+      "(\t*C\n\rMsgActionEnum\022\013\n\007CONNECT\020\000\022\010\n\004CHAT" +
+      "\020\001\022\n\n\006SIGNED\020\002\022\017\n\013PULL_FRIEND\020\003*^\n\022Route" +
+      "MsgActionEnum\022\021\n\rSHUTDOWN_USER\020\000\022\014\n\010REGI" +
+      "STER\020\001\022\031\n\025PUSH_ALL_USER_MESSAGE\020\002\022\014\n\010ALL" +
+      "_USER\020\003B\rB\013ChatMessageb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3227,19 +3307,19 @@ public final class ChatMessage {
     internal_static_Message_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Message_descriptor,
-        new String[] { "DataType", "ChatMsg", "RouteMsg", "DataBody", });
+        new java.lang.String[] { "DataType", "ChatMsg", "RouteMsg", "DataBody", });
     internal_static_ChatMsg_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ChatMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ChatMsg_descriptor,
-        new String[] { "MsgAction", "UserId", "ToUserId", "Data", });
+        new java.lang.String[] { "MsgAction", "MsgId", "UserId", "ToUserId", "Data", });
     internal_static_RouteMsg_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_RouteMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RouteMsg_descriptor,
-        new String[] { "MsgAction", "Data", });
+        new java.lang.String[] { "MsgAction", "Data", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -38,8 +38,8 @@ public class ForwardUtil {
 
     public void sendMessage(ChatServerInfo chatServerInfo, ForwardMessage message) {
         String instance = chatServerInfo.getAddress() + ":" + chatServerInfo.getPort();
-        WebClient client = WebClient.create(instance);
-        Mono<String> result = client.post()
+        WebClient webClient = WebClient.builder().baseUrl(instance).build();
+        Mono<String> result = webClient.post()
                 .uri("/message")
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(message)

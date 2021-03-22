@@ -33,7 +33,7 @@ public class RouteController {
 		return routeService.getChatServer();
 	}
 
-	@PostMapping("/message")
+	@PostMapping("/forward/message")
 	public void sendMessage(@RequestBody ForwardMessage message) {
 		log.info("received message from userID: " + message.getUserId());
 

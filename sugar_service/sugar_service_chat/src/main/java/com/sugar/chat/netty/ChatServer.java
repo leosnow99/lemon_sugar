@@ -34,6 +34,9 @@ public class ChatServer {
 	
 	@Value("${netty-service.port}")
 	private int port;
+
+	@Value("${netty-service.http—port}")
+	private int httpPort;
 	
 	@Value("${spring.application.name}")
 	private String name;
@@ -62,7 +65,7 @@ public class ChatServer {
 	}
 	
 	public void registerToRoute() {
-		routeFeign.register(ChatServerInfo.of(name + ":" + serverId, ip, 6100, 0));
+		routeFeign.register(ChatServerInfo.of(name + ":" + serverId, ip, httpPort, 0));
 	}
 	
 	

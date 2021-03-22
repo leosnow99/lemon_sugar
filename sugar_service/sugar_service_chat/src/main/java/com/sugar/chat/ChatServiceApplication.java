@@ -1,5 +1,6 @@
 package com.sugar.chat;
 
+import com.sugar.chat.util.IdWorker;
 import com.sugar.chat.util.SpringUtil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,5 +22,10 @@ public class ChatServiceApplication {
 	@Bean
 	public SpringUtil springUtil() {
 		return new SpringUtil();
+	}
+
+	@Bean
+	public IdWorker idWorker() {
+		return new IdWorker(1,1);
 	}
 }

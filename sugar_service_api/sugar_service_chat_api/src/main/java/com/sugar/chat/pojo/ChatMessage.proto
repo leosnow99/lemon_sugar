@@ -19,9 +19,10 @@ message Message {
 
 message ChatMsg {
   MsgActionEnum msgAction = 1;
-  string userId = 2;
-  string toUserId = 3;
-  string data = 4;
+  string msgId = 2;
+  string userId = 3;
+  string toUserId = 4;
+  string data = 5;
 }
 
 message RouteMsg {
