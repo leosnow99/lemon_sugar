@@ -17,8 +17,7 @@ public class RouteController {
 	
 	@Autowired
 	private RouteService routeService;
-	
-	
+
 	@PostMapping("/register")
 	public void register(@RequestBody ChatServerInfo chatServerInfo) {
 		if (chatServerInfo == null) {

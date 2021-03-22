@@ -12,6 +12,7 @@
     <modules>
         <module>sugar_service_chat</module>
         <module>sugar_service_route</module>
+        <module>sugar_service_user</module>
     </modules>
 
     <properties>
