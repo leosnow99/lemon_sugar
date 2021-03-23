@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="sugar_service_chat_api" />
         <module name="sugar_service_route_api" />
+        <module name="sugar_client" />
         <module name="sugar_common" />
         <module name="sugar_service_user" />
         <module name="sugar_service_chat" />
@@ -24,6 +25,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="sugar_chat_service" options="-parameters" />
+      <module name="sugar_client" options="-parameters" />
       <module name="sugar_common" options="-parameters" />
       <module name="sugar_gateway" options="-parameters" />
       <module name="sugar_server_route" options="-parameters" />

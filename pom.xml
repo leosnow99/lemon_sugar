@@ -13,6 +13,7 @@
         <module>sugar_service_api</module>
         <module>sugar_service</module>
         <module>sugar_gateway</module>
+        <module>sugar_client</module>
     </modules>
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

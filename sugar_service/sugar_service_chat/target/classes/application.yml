@@ -33,4 +33,4 @@ spring:
     host: 10.227.90.154
 chat-server:
   redis:
-    user_server_prefix: USER_SERVER  // k:v USER_SERVER101:1
+    user_server_prefix: USER_SERVER  # k:v USER_SERVER101:1

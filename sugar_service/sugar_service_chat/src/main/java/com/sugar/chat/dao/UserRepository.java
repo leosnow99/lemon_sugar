@@ -16,5 +16,5 @@ public interface UserRepository extends JpaRepository<User, String>, JpaSpecific
      * @param password 密码
      * @return 用户实例
      */
-    User findUserByUseAndUserNameAndPassword(String userName, String password);
+    User findUserByUserNameAndPassword(String userName, String password);
 }

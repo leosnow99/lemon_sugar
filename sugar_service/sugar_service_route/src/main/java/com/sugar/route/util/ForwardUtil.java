@@ -37,7 +37,7 @@ public class ForwardUtil {
     }
 
     public void sendMessage(ChatServerInfo chatServerInfo, ForwardMessage message) {
-        String instance = chatServerInfo.getAddress() + ":" + chatServerInfo.getPort();
+        String instance = "http://" + chatServerInfo.getAddress() + ":" + chatServerInfo.getHttpPort();
         WebClient webClient = WebClient.builder().baseUrl(instance).build();
         Mono<String> result = webClient.post()
                 .uri("/message")

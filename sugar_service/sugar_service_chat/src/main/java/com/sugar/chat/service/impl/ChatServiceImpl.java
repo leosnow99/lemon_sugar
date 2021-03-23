@@ -4,6 +4,7 @@ import com.sugar.chat.dao.ChatMsgRepository;
 import com.sugar.chat.model.ChatMsg;
 import com.sugar.chat.pojo.ChatMessage;
 import com.sugar.chat.pojo.ChatMessageFactory;
+import com.sugar.chat.pojo.TransferMessage;
 import com.sugar.chat.service.ChatService;
 import com.sugar.chat.util.ChannelSocketHolder;
 import com.sugar.chat.util.IdWorker;
@@ -98,11 +99,12 @@ public class ChatServiceImpl implements ChatService {
         NioSocketChannel channel = ChannelSocketHolder.get(toId);
         if (channel == null) {
             // 用户离线或用户没有注册到本服务器，通过route转发
+            log.info("userid: " + toId + " 不在线");
             ForwardMessage forwardMessage = new ForwardMessage(fromId, toId, msg, msgId);
             routeFeign.sendMessage(forwardMessage);
             return;
         }
-        channel.writeAndFlush(ChatMessageFactory.ofSendChatMessage(ChatMessage.MsgActionEnum.CHAT, fromId, toId, msg, msgId));
+        channel.writeAndFlush(TransferMessage.of(ChatMessageFactory.ofSendChatMessage(ChatMessage.MsgActionEnum.CHAT, fromId, toId, msg, msgId)));
     }
 
     @Override
@@ -116,8 +118,8 @@ public class ChatServiceImpl implements ChatService {
     public void forwardMsg(ForwardMessage message) {
         NioSocketChannel channel = ChannelSocketHolder.get(message.getToUserId());
         if (channel != null) {
-            channel.writeAndFlush(ChatMessageFactory.ofSendChatMessage(ChatMessage.MsgActionEnum.CHAT,
-                    message.getUserId(), message.getToUserId(), message.getData(), message.getMsgId()));
+            channel.writeAndFlush(TransferMessage.of(ChatMessageFactory.ofSendChatMessage(ChatMessage.MsgActionEnum.CHAT,
+                    message.getUserId(), message.getToUserId(), message.getData(), message.getMsgId())));
         }
     }
 }

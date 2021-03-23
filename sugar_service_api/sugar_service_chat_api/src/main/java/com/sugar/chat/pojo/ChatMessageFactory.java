@@ -30,6 +30,11 @@ public class ChatMessageFactory {
         return ChatMessage.Message.newBuilder().setDataType(ChatMessage.Message.DataType.ChatMsgType)
                 .setChatMsg(ChatMessage.ChatMsg.newBuilder().setMsgAction(msgAction).setUserId(fromId)
                         .setToUserId(toId).setData(data).setMsgId(msgId)).build();
+    }
 
+    public static ChatMessage.Message ofSendChatMessage(ChatMessage.MsgActionEnum msgAction, String fromId, String toId, String data) {
+        return ChatMessage.Message.newBuilder().setDataType(ChatMessage.Message.DataType.ChatMsgType)
+                .setChatMsg(ChatMessage.ChatMsg.newBuilder().setMsgAction(msgAction).setUserId(fromId)
+                        .setToUserId(toId).setData(data)).build();
     }
 }

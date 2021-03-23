@@ -28,12 +28,20 @@ public class ChatHandler extends SimpleChannelInboundHandler<TransferMessage> {
             return;
         }
         final ChatMessage.Message message = msg.getMessage();
+        log.info("收到消息： "+ message);
+        System.out.println("收到消息： "+ message);
         if (message.getDataType() == ChatMessage.Message.DataType.ChatMsgType) {
             handleChatMessage(message.getChatMsg(), (NioSocketChannel) ctx.channel());
         } else if (message.getDataType() == ChatMessage.Message.DataType.RouteMsgType) {
             handleRoutMessage(message.getRouteMsg(), (NioSocketChannel) ctx.channel());
         }
 
+    }
+
+    @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("有用户链接");
+        super.channelActive(ctx);
     }
 
     private void handleChatMessage(ChatMessage.ChatMsg chatMsg, NioSocketChannel channel) {

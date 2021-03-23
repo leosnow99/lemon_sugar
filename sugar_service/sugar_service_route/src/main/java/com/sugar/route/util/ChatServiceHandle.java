@@ -53,7 +53,7 @@ public class ChatServiceHandle {
     public void check(ChatServerInfo chatServerInfo) {
         log.info("begin heath check serverId: " + chatServerInfo.getId());
 
-        String instance = "http://" + chatServerInfo.getAddress() + ":" + chatServerInfo.getPort();
+        String instance = "http://" + chatServerInfo.getAddress() + ":" + chatServerInfo.getHttpPort();
         log.info("instance: " + instance);
         WebClient webClient = WebClient.builder().baseUrl(instance).build();
         // 异步处理健康检查并将结果更新到 redis
@@ -86,7 +86,14 @@ public class ChatServiceHandle {
                 log.warn("get chatServer failed chatServerId: " + serverId);
                 return;
             }
-            chatServer = new ChatServerInfo(serverId, serviceInstance.getHost(), serviceInstance.getPort(), 0);
+
+            String portStr = serviceInstance.getMetadata().get("rote-portStr");
+            if (StringUtils.isEmpty(portStr)) {
+                portStr = "7100";
+            }
+            Integer port = Integer.valueOf(portStr);
+
+            chatServer = new ChatServerInfo(serverId, serviceInstance.getHost(), port, serviceInstance.getPort(), 0);
             register(chatServer);
         }
 

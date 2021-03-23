@@ -4,9 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -19,6 +17,7 @@ import java.util.Date;
 @Table(name = "chat_msg")
 public class ChatMsg {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public String id;
     public String msgId;
     public String fromId;

@@ -11,12 +11,13 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 public class ChatServerInfo implements Serializable {
-	private String id;
-	private String address;
-	private Integer port;
-	private Integer count;
-	
-	public static ChatServerInfo of(String id, String address, Integer port, Integer count) {
-		return new ChatServerInfo(id, address, port, count);
-	}
+    private String id;
+    private String address;
+    private Integer port;
+    private Integer httpPort;
+    private Integer count;
+
+    public static ChatServerInfo of(String id, String address, Integer port, Integer count, Integer httpPort) {
+        return new ChatServerInfo(id, address, port, httpPort, count);
+    }
 }

@@ -65,7 +65,7 @@ public class ChatServer {
 	}
 	
 	public void registerToRoute() {
-		routeFeign.register(ChatServerInfo.of(name + ":" + serverId, ip, httpPort, 0));
+		routeFeign.register(ChatServerInfo.of(name + ":" + serverId, ip, port,0, httpPort));
 	}
 	
 	

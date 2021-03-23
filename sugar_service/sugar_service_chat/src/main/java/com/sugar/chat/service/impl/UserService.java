@@ -24,11 +24,12 @@ public class UserService {
         if (StringUtils.isEmpty(userName) || StringUtils.isEmpty(password)) {
             return LoginResult.loginFailed();
         }
-        User user = userRepository.findUserByUseAndUserNameAndPassword(userName, password);
+        User user = userRepository.findUserByUserNameAndPassword(userName, password);
         if (user == null) {
             return LoginResult.loginFailed();
         }
         ChatServerInfo chatService = routeFeign.getChatService();
+        System.out.println(chatService);
         LoginResult result = new LoginResult();
         result.setLogin(true);
         result.setIp(chatService.getAddress());
